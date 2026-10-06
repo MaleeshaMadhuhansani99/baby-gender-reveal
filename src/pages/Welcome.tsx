@@ -18,6 +18,30 @@ export default function Welcome() {
       <div className="butterfly butterfly-two">🦋</div>
       <div className="butterfly butterfly-three">🦋</div> */}
 
+      {/* =====================================================
+          FLOATING DECORATIONS
+          ===================================================== */}
+
+      <div className="floating-heart heart-one">
+        <Heart size={20} fill="currentColor" />
+      </div>
+
+      <div className="floating-heart heart-two">
+        <Heart size={17} fill="currentColor" />
+      </div>
+
+      <div className="sparkle sparkle-one">
+        <Sparkles size={22} />
+      </div>
+
+      <div className="sparkle sparkle-two">
+        <Stars size={20} />
+      </div>
+
+      <div className="sparkle sparkle-three">
+        <Sparkles size={17} />
+      </div>
+
       {/* Flying butterflies */}
       <div className="butterfly butterfly-one">
         <span className="butterfly-wing butterfly-wing-left" />
@@ -41,30 +65,6 @@ export default function Welcome() {
         <span className="butterfly-wing butterfly-wing-left" />
         <span className="butterfly-body" />
         <span className="butterfly-wing butterfly-wing-right" />
-      </div>
-
-      {/* =====================================================
-          FLOATING DECORATIONS
-          ===================================================== */}
-
-      <div className="floating-heart heart-one">
-        <Heart size={20} fill="currentColor" />
-      </div>
-
-      <div className="floating-heart heart-two">
-        <Heart size={17} fill="currentColor" />
-      </div>
-
-      <div className="sparkle sparkle-one">
-        <Sparkles size={22} />
-      </div>
-
-      <div className="sparkle sparkle-two">
-        <Stars size={20} />
-      </div>
-
-      <div className="sparkle sparkle-three">
-        <Sparkles size={17} />
       </div>
 
       {/* =====================================================
