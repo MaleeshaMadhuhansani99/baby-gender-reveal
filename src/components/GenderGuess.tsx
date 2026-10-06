@@ -1,138 +1,239 @@
 import { useState } from 'react'
-import { Heart, Sparkles, Star } from 'lucide-react'
+import {
+  Check,
+  Heart,
+  Sparkles,
+  Star,
+  ArrowRight,
+  Baby,
+} from 'lucide-react'
 
 interface GenderGuessProps {
   onContinue: (guess: 'girl' | 'boy') => void
 }
 
-export default function GenderGuess({
-  onContinue,
-}: GenderGuessProps) {
-  const [selected, setSelected] = useState<'girl' | 'boy' | null>(null)
+type Guess = 'girl' | 'boy'
 
-  const handleSelect = (guess: 'girl' | 'boy') => {
+export default function GenderGuess({ onContinue }: GenderGuessProps) {
+  const [selected, setSelected] = useState<Guess | null>(null)
+
+  const handleSelect = (guess: Guess) => {
     setSelected(guess)
   }
 
   return (
     <main className="relative h-[100svh] w-full overflow-hidden bg-[#fff8f5] text-[#30252f]">
-      {/* Background decorations */}
-      <div className="pointer-events-none absolute -left-24 top-[-10%] h-[35vh] w-[35vh] rounded-full bg-[#ff6b8a]/15 blur-3xl" />
+      {/* Soft background glow */}
+      <div className="pointer-events-none absolute -left-24 -top-24 h-[35vh] w-[35vh] rounded-full bg-[#ff6b8a]/15 blur-3xl animate-soft-glow" />
 
-      <div className="pointer-events-none absolute -right-24 bottom-[-10%] h-[40vh] w-[40vh] rounded-full bg-[#7048e8]/15 blur-3xl" />
+      <div className="pointer-events-none absolute -right-24 top-[8%] h-[40vh] w-[40vh] rounded-full bg-[#7048e8]/12 blur-3xl animate-soft-glow-delay" />
 
-      <div className="pointer-events-none absolute left-[10%] top-[20%] text-[#e83e73]/30">
-        <Sparkles size={24} />
+      <div className="pointer-events-none absolute bottom-[-18vh] left-1/2 h-[42vh] w-[42vh] -translate-x-1/2 rounded-full bg-[#ffb347]/15 blur-3xl animate-soft-glow-delay-2" />
+
+      {/* Floating hearts */}
+      <div className="pointer-events-none absolute left-[8%] top-[18%] animate-float-slow opacity-60">
+        <Heart
+          size={18}
+          fill="#ff6b8a"
+          strokeWidth={1.5}
+          className="text-[#ff6b8a]"
+        />
       </div>
 
-      <div className="pointer-events-none absolute right-[12%] top-[18%] text-[#7048e8]/30">
-        <Star size={22} />
+      <div className="pointer-events-none absolute right-[10%] top-[26%] animate-float opacity-60">
+        <Heart
+          size={14}
+          fill="#7048e8"
+          strokeWidth={1.5}
+          className="text-[#7048e8]"
+        />
       </div>
 
-      <div className="pointer-events-none absolute bottom-[20%] left-[12%] text-[#ff9f1c]/40">
-        <Sparkles size={20} />
+      <div className="pointer-events-none absolute bottom-[20%] left-[12%] animate-float-delay opacity-50">
+        <Star
+          size={17}
+          fill="#ffb347"
+          strokeWidth={1.5}
+          className="text-[#ffb347]"
+        />
       </div>
 
-      <div className="pointer-events-none absolute bottom-[18%] right-[10%] text-[#e83e73]/30">
-        <Heart size={20} fill="currentColor" />
+      <div className="pointer-events-none absolute bottom-[18%] right-[13%] animate-float-slow opacity-50">
+        <Sparkles
+          size={19}
+          strokeWidth={1.5}
+          className="text-[#7048e8]"
+        />
       </div>
+
+      {/* Small decorative dots */}
+      <div className="pointer-events-none absolute left-[20%] top-[35%] h-2 w-2 rounded-full bg-[#ff6b8a]/40 animate-twinkle" />
+      <div className="pointer-events-none absolute right-[22%] top-[44%] h-1.5 w-1.5 rounded-full bg-[#7048e8]/40 animate-twinkle-delay" />
+      <div className="pointer-events-none absolute bottom-[30%] left-[25%] h-1.5 w-1.5 rounded-full bg-[#ffb347]/50 animate-twinkle-delay-2" />
 
       {/* Main content */}
-      <section className="relative z-10 flex h-full w-full items-center justify-center px-4">
-        <div className="w-full max-w-2xl text-center">
+      <section className="relative z-10 flex h-full w-full items-center justify-center px-4 py-5">
+        <div className="flex h-full w-full max-w-3xl flex-col items-center justify-center text-center">
 
-          {/* Small label */}
-          <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-[#7048e8] shadow-sm ring-1 ring-[#eee5f5]">
-            <Sparkles size={13} className="text-[#ff9f1c]" />
-            Make your prediction
+          {/* Top label */}
+          <div className="animate-page-fade-up mb-3 flex items-center gap-2 rounded-full border border-[#ff6b8a]/20 bg-white/70 px-4 py-2 shadow-sm backdrop-blur-sm">
+            <Baby
+              size={15}
+              className="text-[#e83e73]"
+              strokeWidth={2}
+            />
+
+            <span className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#81727d] sm:text-xs">
+              Prediction time
+            </span>
+
+            <Sparkles
+              size={14}
+              className="text-[#7048e8]"
+              strokeWidth={1.8}
+            />
           </div>
 
           {/* Heading */}
-          <h1 className="font-serif text-[clamp(2rem,7vw,3.8rem)] font-bold leading-[0.95] text-[#720c7d]">
-            What do you think
-            <span className="block text-[#e83e73]">
-              Baby will be?
-            </span>
-          </h1>
+          <div className="animate-page-fade-up-delay-1">
+            <h1
+              className="font-serif font-bold tracking-tight text-[#720c7d]"
+              style={{
+                fontSize: 'clamp(2rem, 6vw, 3.5rem)',
+                lineHeight: 1.05,
+              }}
+            >
+              Make your prediction
+            </h1>
 
-          <p className="mx-auto mt-4 max-w-md text-sm leading-relaxed text-[#625761] sm:text-base">
-            Time to trust your instincts! Pick the team you think
-            Baby Dilki & Asinthaka is joining. 👀
-          </p>
+            <p
+              className="mx-auto mt-3 max-w-xl px-2 text-[#625761]"
+              style={{
+                fontSize: 'clamp(0.85rem, 2vw, 1rem)',
+                lineHeight: 1.55,
+              }}
+            >
+              What do you think Baby will be?
+              <br />
+              <span className="text-[#81727d]">
+                Trust your instincts... 👀
+              </span>
+            </p>
+          </div>
 
-          {/* Choices */}
-          <div className="mx-auto mt-8 grid w-full max-w-lg grid-cols-2 gap-4">
-
+          {/* Guess cards */}
+          <div className="mt-6 grid w-full max-w-2xl grid-cols-2 gap-3 px-1 sm:mt-8 sm:gap-5 sm:px-0">
             {/* Girl */}
             <button
               type="button"
               onClick={() => handleSelect('girl')}
-              className={`group relative overflow-hidden rounded-3xl border-2 p-5 transition-all duration-300 sm:p-7 ${
-                selected === 'girl'
-                  ? 'scale-[1.03] border-[#e83e73] bg-[#fff0f4] shadow-[0_15px_40px_rgba(232,62,115,0.20)]'
-                  : 'border-[#f0dfe5] bg-white hover:-translate-y-1 hover:border-[#ff9fbd] hover:shadow-lg'
+              className={`guess-card guess-card-girl group animate-card-in-1 ${
+                selected === 'girl' ? 'guess-card-selected' : ''
               }`}
             >
-              <div className="text-5xl transition-transform duration-300 group-hover:scale-110 sm:text-6xl">
-                🎀
+              {/* Selection check */}
+              <div
+                className={`absolute right-3 top-3 flex h-7 w-7 items-center justify-center rounded-full bg-[#e83e73] text-white transition-all duration-300 sm:right-4 sm:top-4 ${
+                  selected === 'girl'
+                    ? 'scale-100 opacity-100'
+                    : 'scale-50 opacity-0'
+                }`}
+              >
+                <Check size={15} strokeWidth={3} />
               </div>
 
-              <h2 className="mt-3 text-lg font-bold text-[#e83e73] sm:text-xl">
-                Little Girl
-              </h2>
-
-              <p className="mt-1 text-xs text-[#81727d] sm:text-sm">
-                Team Pink 💕
-              </p>
-
+              {/* Sparkles */}
               {selected === 'girl' && (
-                <div className="absolute right-3 top-3 flex h-7 w-7 items-center justify-center rounded-full bg-[#e83e73] text-white">
-                  ✓
-                </div>
+                <>
+                  <Sparkles className="selection-sparkle sparkle-1 absolute left-[12%] top-[15%] h-4 w-4 text-[#e83e73]" />
+                  <Sparkles className="selection-sparkle sparkle-2 absolute right-[13%] bottom-[18%] h-3.5 w-3.5 text-[#ff6b8a]" />
+                </>
               )}
+
+              <div className="relative z-10 flex flex-col items-center">
+                <div
+                  className={`guess-icon guess-icon-girl ${
+                    selected === 'girl'
+                      ? 'scale-110'
+                      : 'group-hover:scale-105'
+                  }`}
+                >
+                  🎀
+                </div>
+
+                <h2 className="mt-3 text-base font-bold text-[#30252f] sm:text-xl">
+                  Little Girl
+                </h2>
+
+                <p className="mt-1 text-xs font-medium text-[#e83e73] sm:text-sm">
+                  Team Pink 💕
+                </p>
+              </div>
             </button>
 
             {/* Boy */}
             <button
               type="button"
               onClick={() => handleSelect('boy')}
-              className={`group relative overflow-hidden rounded-3xl border-2 p-5 transition-all duration-300 sm:p-7 ${
-                selected === 'boy'
-                  ? 'scale-[1.03] border-[#7048e8] bg-[#f3efff] shadow-[0_15px_40px_rgba(112,72,232,0.20)]'
-                  : 'border-[#e3def2] bg-white hover:-translate-y-1 hover:border-[#a99af0] hover:shadow-lg'
+              className={`guess-card guess-card-boy group animate-card-in-2 ${
+                selected === 'boy' ? 'guess-card-selected' : ''
               }`}
             >
-              <div className="text-5xl transition-transform duration-300 group-hover:scale-110 sm:text-6xl">
-                🧢
+              {/* Selection check */}
+              <div
+                className={`absolute right-3 top-3 flex h-7 w-7 items-center justify-center rounded-full bg-[#7048e8] text-white transition-all duration-300 sm:right-4 sm:top-4 ${
+                  selected === 'boy'
+                    ? 'scale-100 opacity-100'
+                    : 'scale-50 opacity-0'
+                }`}
+              >
+                <Check size={15} strokeWidth={3} />
               </div>
 
-              <h2 className="mt-3 text-lg font-bold text-[#7048e8] sm:text-xl">
-                Little Boy
-              </h2>
-
-              <p className="mt-1 text-xs text-[#81727d] sm:text-sm">
-                Team Blue 💙
-              </p>
-
+              {/* Sparkles */}
               {selected === 'boy' && (
-                <div className="absolute right-3 top-3 flex h-7 w-7 items-center justify-center rounded-full bg-[#7048e8] text-white">
-                  ✓
-                </div>
+                <>
+                  <Sparkles className="selection-sparkle sparkle-1 absolute left-[12%] top-[15%] h-4 w-4 text-[#7048e8]" />
+                  <Sparkles className="selection-sparkle sparkle-2 absolute right-[13%] bottom-[18%] h-3.5 w-3.5 text-[#9b7cf4]" />
+                </>
               )}
+
+              <div className="relative z-10 flex flex-col items-center">
+                <div
+                  className={`guess-icon guess-icon-boy ${
+                    selected === 'boy'
+                      ? 'scale-110'
+                      : 'group-hover:scale-105'
+                  }`}
+                >
+                  🧢
+                </div>
+
+                <h2 className="mt-3 text-base font-bold text-[#30252f] sm:text-xl">
+                  Little Boy
+                </h2>
+
+                <p className="mt-1 text-xs font-medium text-[#7048e8] sm:text-sm">
+                  Team Blue 💙
+                </p>
+              </div>
             </button>
           </div>
 
           {/* Reaction */}
-          <div className="mt-6 min-h-[70px]">
+          <div className="mt-4 h-[48px] sm:mt-5">
             {selected && (
-              <div className="animate-[welcomeFade_0.5s_ease-out]">
-                <p className="text-sm font-bold text-[#30252f]">
+              <div
+                key={selected}
+                className="animate-reaction flex flex-col items-center"
+              >
+                <p className="text-sm font-bold text-[#30252f] sm:text-base">
                   {selected === 'girl'
                     ? '🎀 Ooooh... Team Girl!'
                     : '💙 Ooooh... Team Boy!'}
                 </p>
 
-                <p className="mt-1 text-xs text-[#81727d]">
+                <p className="mt-0.5 text-xs text-[#81727d] sm:text-sm">
                   {selected === 'girl'
                     ? 'Someone has strong pink predictions! 👀'
                     : 'Someone has strong blue predictions! 👀'}
@@ -142,24 +243,32 @@ export default function GenderGuess({
           </div>
 
           {/* Continue */}
-          <button
-            type="button"
-            disabled={!selected}
-            onClick={() => selected && onContinue(selected)}
-            className={`mt-3 inline-flex min-h-12 items-center gap-2 rounded-full px-7 text-sm font-bold transition-all duration-300 ${
-              selected
-                ? 'bg-[#e83e73] text-white shadow-[0_8px_25px_rgba(232,62,115,0.30)] hover:-translate-y-1 hover:bg-[#d92f63]'
-                : 'cursor-not-allowed bg-[#eadfe4] text-[#aa9da4]'
-            }`}
-          >
-            <span>
-              {selected ? 'Let’s continue' : 'Choose your team'}
-            </span>
+          <div className="mt-3 sm:mt-4">
+            <button
+              type="button"
+              disabled={!selected}
+              onClick={() => selected && onContinue(selected)}
+              className={`group flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition-all duration-300 sm:px-7 ${
+                selected
+                  ? 'continue-ready bg-[#30252f] text-white shadow-lg hover:-translate-y-1 hover:shadow-xl'
+                  : 'cursor-not-allowed bg-[#30252f]/10 text-[#30252f]/30'
+              }`}
+            >
+              <span>
+                {selected ? 'Let’s see what happens' : 'Choose your team'}
+              </span>
 
-            <span className="text-lg">→</span>
-          </button>
+              <ArrowRight
+                size={17}
+                className={`transition-transform duration-300 ${
+                  selected ? 'group-hover:translate-x-1' : ''
+                }`}
+              />
+            </button>
+          </div>
 
-          <p className="mt-3 text-[11px] font-medium tracking-wide text-[#a0939c]">
+          {/* Bottom hint */}
+          <p className="animate-page-fade-up-delay-3 mt-4 text-[10px] tracking-wide text-[#a0929b] sm:text-xs">
             Your prediction will be revealed later... 🤫
           </p>
         </div>

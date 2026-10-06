@@ -121,21 +121,15 @@ body {
   transform-origin: right center;
 
   background:
-    radial-gradient(
-      circle at 65% 30%,
+    radial-gradient(circle at 65% 30%,
       rgba(255, 255, 255, 0.95) 0 12%,
-      transparent 13%
-    ),
-    radial-gradient(
-      circle at 35% 70%,
+      transparent 13%),
+    radial-gradient(circle at 35% 70%,
       rgba(255, 255, 255, 0.35) 0 8%,
-      transparent 9%
-    ),
-    linear-gradient(
-      145deg,
+      transparent 9%),
+    linear-gradient(145deg,
       #ffb1c9,
-      #e83e73
-    );
+      #e83e73);
 
   box-shadow:
     inset -3px -3px 6px rgba(255, 255, 255, 0.3),
@@ -151,21 +145,15 @@ body {
   transform-origin: left center;
 
   background:
-    radial-gradient(
-      circle at 65% 30%,
+    radial-gradient(circle at 65% 30%,
       rgba(255, 255, 255, 0.95) 0 12%,
-      transparent 13%
-    ),
-    radial-gradient(
-      circle at 35% 70%,
+      transparent 13%),
+    radial-gradient(circle at 35% 70%,
       rgba(255, 255, 255, 0.35) 0 8%,
-      transparent 9%
-    ),
-    linear-gradient(
-      145deg,
+      transparent 9%),
+    linear-gradient(145deg,
       #cdbbff,
-      #7048e8
-    );
+      #7048e8);
 
   box-shadow:
     inset -3px -3px 6px rgba(255, 255, 255, 0.3),
@@ -266,8 +254,7 @@ body {
     opacity: 0;
 
     transform:
-      rotate(-15deg)
-      scale(0.7);
+      rotate(-15deg) scale(0.7);
   }
 
   7% {
@@ -279,8 +266,7 @@ body {
     top: 58%;
 
     transform:
-      rotate(12deg)
-      scale(0.85);
+      rotate(12deg) scale(0.85);
   }
 
   32% {
@@ -288,8 +274,7 @@ body {
     top: 70%;
 
     transform:
-      rotate(-10deg)
-      scale(0.95);
+      rotate(-10deg) scale(0.95);
   }
 
   47% {
@@ -297,8 +282,7 @@ body {
     top: 48%;
 
     transform:
-      rotate(15deg)
-      scale(1);
+      rotate(15deg) scale(1);
   }
 
   62% {
@@ -306,8 +290,7 @@ body {
     top: 60%;
 
     transform:
-      rotate(-12deg)
-      scale(1.05);
+      rotate(-12deg) scale(1.05);
   }
 
   76% {
@@ -315,8 +298,7 @@ body {
     top: 38%;
 
     transform:
-      rotate(10deg)
-      scale(0.95);
+      rotate(10deg) scale(0.95);
   }
 
   90% {
@@ -326,8 +308,7 @@ body {
     opacity: 1;
 
     transform:
-      rotate(-8deg)
-      scale(0.85);
+      rotate(-8deg) scale(0.85);
   }
 
   100% {
@@ -337,8 +318,7 @@ body {
     opacity: 0;
 
     transform:
-      rotate(10deg)
-      scale(0.65);
+      rotate(10deg) scale(0.65);
   }
 }
 
@@ -366,8 +346,7 @@ body {
     opacity: 0;
 
     transform:
-      rotate(15deg)
-      scale(0.75);
+      rotate(15deg) scale(0.75);
   }
 
   8% {
@@ -379,8 +358,7 @@ body {
     top: 15%;
 
     transform:
-      rotate(-10deg)
-      scale(0.9);
+      rotate(-10deg) scale(0.9);
   }
 
   34% {
@@ -388,8 +366,7 @@ body {
     top: 32%;
 
     transform:
-      rotate(12deg)
-      scale(1);
+      rotate(12deg) scale(1);
   }
 
   49% {
@@ -397,8 +374,7 @@ body {
     top: 48%;
 
     transform:
-      rotate(-15deg)
-      scale(0.95);
+      rotate(-15deg) scale(0.95);
   }
 
   63% {
@@ -406,8 +382,7 @@ body {
     top: 38%;
 
     transform:
-      rotate(10deg)
-      scale(1.05);
+      rotate(10deg) scale(1.05);
   }
 
   76% {
@@ -415,8 +390,7 @@ body {
     top: 62%;
 
     transform:
-      rotate(-12deg)
-      scale(0.9);
+      rotate(-12deg) scale(0.9);
   }
 
   89% {
@@ -426,8 +400,7 @@ body {
     opacity: 1;
 
     transform:
-      rotate(8deg)
-      scale(0.8);
+      rotate(8deg) scale(0.8);
   }
 
   100% {
@@ -437,8 +410,7 @@ body {
     opacity: 0;
 
     transform:
-      rotate(-10deg)
-      scale(0.6);
+      rotate(-10deg) scale(0.6);
   }
 }
 
@@ -466,8 +438,7 @@ body {
     opacity: 0;
 
     transform:
-      rotate(-10deg)
-      scale(0.65);
+      rotate(-10deg) scale(0.65);
   }
 
   8% {
@@ -479,8 +450,7 @@ body {
     top: 88%;
 
     transform:
-      rotate(12deg)
-      scale(0.75);
+      rotate(12deg) scale(0.75);
   }
 
   34% {
@@ -488,8 +458,7 @@ body {
     top: 68%;
 
     transform:
-      rotate(-15deg)
-      scale(0.85);
+      rotate(-15deg) scale(0.85);
   }
 
   49% {
@@ -497,8 +466,7 @@ body {
     top: 52%;
 
     transform:
-      rotate(10deg)
-      scale(0.95);
+      rotate(10deg) scale(0.95);
   }
 
   63% {
@@ -506,8 +474,7 @@ body {
     top: 35%;
 
     transform:
-      rotate(-12deg)
-      scale(0.9);
+      rotate(-12deg) scale(0.9);
   }
 
   77% {
@@ -515,8 +482,7 @@ body {
     top: 20%;
 
     transform:
-      rotate(8deg)
-      scale(0.8);
+      rotate(8deg) scale(0.8);
   }
 
   90% {
@@ -533,8 +499,7 @@ body {
     opacity: 0;
 
     transform:
-      rotate(-8deg)
-      scale(0.6);
+      rotate(-8deg) scale(0.6);
   }
 }
 
@@ -562,8 +527,7 @@ body {
     opacity: 0;
 
     transform:
-      rotate(10deg)
-      scale(0.55);
+      rotate(10deg) scale(0.55);
   }
 
   7% {
@@ -575,8 +539,7 @@ body {
     top: 25%;
 
     transform:
-      rotate(-12deg)
-      scale(0.65);
+      rotate(-12deg) scale(0.65);
   }
 
   30% {
@@ -584,8 +547,7 @@ body {
     top: 42%;
 
     transform:
-      rotate(15deg)
-      scale(0.75);
+      rotate(15deg) scale(0.75);
   }
 
   43% {
@@ -593,8 +555,7 @@ body {
     top: 28%;
 
     transform:
-      rotate(-10deg)
-      scale(0.8);
+      rotate(-10deg) scale(0.8);
   }
 
   57% {
@@ -602,8 +563,7 @@ body {
     top: 52%;
 
     transform:
-      rotate(12deg)
-      scale(0.75);
+      rotate(12deg) scale(0.75);
   }
 
   70% {
@@ -611,8 +571,7 @@ body {
     top: 40%;
 
     transform:
-      rotate(-15deg)
-      scale(0.7);
+      rotate(-15deg) scale(0.7);
   }
 
   83% {
@@ -620,8 +579,7 @@ body {
     top: 65%;
 
     transform:
-      rotate(10deg)
-      scale(0.65);
+      rotate(10deg) scale(0.65);
   }
 
   93% {
@@ -638,8 +596,7 @@ body {
     opacity: 0;
 
     transform:
-      rotate(-10deg)
-      scale(0.5);
+      rotate(-10deg) scale(0.5);
   }
 }
 
@@ -667,8 +624,7 @@ body {
     opacity: 0;
 
     transform:
-      rotate(-15deg)
-      scale(0.65);
+      rotate(-15deg) scale(0.65);
   }
 
   8% {
@@ -680,8 +636,7 @@ body {
     top: 68%;
 
     transform:
-      rotate(10deg)
-      scale(0.8);
+      rotate(10deg) scale(0.8);
   }
 
   36% {
@@ -689,8 +644,7 @@ body {
     top: 82%;
 
     transform:
-      rotate(-12deg)
-      scale(0.9);
+      rotate(-12deg) scale(0.9);
   }
 
   51% {
@@ -698,8 +652,7 @@ body {
     top: 62%;
 
     transform:
-      rotate(14deg)
-      scale(1);
+      rotate(14deg) scale(1);
   }
 
   66% {
@@ -707,8 +660,7 @@ body {
     top: 75%;
 
     transform:
-      rotate(-10deg)
-      scale(0.9);
+      rotate(-10deg) scale(0.9);
   }
 
   80% {
@@ -716,8 +668,7 @@ body {
     top: 55%;
 
     transform:
-      rotate(12deg)
-      scale(0.82);
+      rotate(12deg) scale(0.82);
   }
 
   92% {
@@ -734,8 +685,7 @@ body {
     opacity: 0;
 
     transform:
-      rotate(-10deg)
-      scale(0.6);
+      rotate(-10deg) scale(0.6);
   }
 }
 
@@ -748,30 +698,22 @@ body {
 
 .butterfly-two .butterfly-wing-left {
   background:
-    radial-gradient(
-      circle at 65% 30%,
+    radial-gradient(circle at 65% 30%,
       rgba(255, 255, 255, 0.95) 0 12%,
-      transparent 13%
-    ),
-    linear-gradient(
-      145deg,
+      transparent 13%),
+    linear-gradient(145deg,
       #ffd1e1,
-      #ff6b8a
-    );
+      #ff6b8a);
 }
 
 .butterfly-two .butterfly-wing-right {
   background:
-    radial-gradient(
-      circle at 65% 30%,
+    radial-gradient(circle at 65% 30%,
       rgba(255, 255, 255, 0.95) 0 12%,
-      transparent 13%
-    ),
-    linear-gradient(
-      145deg,
+      transparent 13%),
+    linear-gradient(145deg,
       #d8caff,
-      #8b6cf6
-    );
+      #8b6cf6);
 }
 
 
@@ -779,30 +721,22 @@ body {
 
 .butterfly-three .butterfly-wing-left {
   background:
-    radial-gradient(
-      circle at 65% 30%,
+    radial-gradient(circle at 65% 30%,
       rgba(255, 255, 255, 0.95) 0 12%,
-      transparent 13%
-    ),
-    linear-gradient(
-      145deg,
+      transparent 13%),
+    linear-gradient(145deg,
       #ffc4d6,
-      #f15b88
-    );
+      #f15b88);
 }
 
 .butterfly-three .butterfly-wing-right {
   background:
-    radial-gradient(
-      circle at 65% 30%,
+    radial-gradient(circle at 65% 30%,
       rgba(255, 255, 255, 0.95) 0 12%,
-      transparent 13%
-    ),
-    linear-gradient(
-      145deg,
+      transparent 13%),
+    linear-gradient(145deg,
       #d2c2ff,
-      #7654df
-    );
+      #7654df);
 }
 
 
@@ -810,30 +744,22 @@ body {
 
 .butterfly-four .butterfly-wing-left {
   background:
-    radial-gradient(
-      circle at 65% 30%,
+    radial-gradient(circle at 65% 30%,
       rgba(255, 255, 255, 0.95) 0 12%,
-      transparent 13%
-    ),
-    linear-gradient(
-      145deg,
+      transparent 13%),
+    linear-gradient(145deg,
       #ffd0c2,
-      #ff7b72
-    );
+      #ff7b72);
 }
 
 .butterfly-four .butterfly-wing-right {
   background:
-    radial-gradient(
-      circle at 65% 30%,
+    radial-gradient(circle at 65% 30%,
       rgba(255, 255, 255, 0.95) 0 12%,
-      transparent 13%
-    ),
-    linear-gradient(
-      145deg,
+      transparent 13%),
+    linear-gradient(145deg,
       #e0d4ff,
-      #8064df
-    );
+      #8064df);
 }
 
 
@@ -841,30 +767,22 @@ body {
 
 .butterfly-five .butterfly-wing-left {
   background:
-    radial-gradient(
-      circle at 65% 30%,
+    radial-gradient(circle at 65% 30%,
       rgba(255, 255, 255, 0.95) 0 12%,
-      transparent 13%
-    ),
-    linear-gradient(
-      145deg,
+      transparent 13%),
+    linear-gradient(145deg,
       #c9e7ff,
-      #6faee8
-    );
+      #6faee8);
 }
 
 .butterfly-five .butterfly-wing-right {
   background:
-    radial-gradient(
-      circle at 65% 30%,
+    radial-gradient(circle at 65% 30%,
       rgba(255, 255, 255, 0.95) 0 12%,
-      transparent 13%
-    ),
-    linear-gradient(
-      145deg,
+      transparent 13%),
+    linear-gradient(145deg,
       #ded2ff,
-      #7958df
-    );
+      #7958df);
 }
 
 
@@ -919,17 +837,16 @@ body {
 }
 
 @keyframes heartFloat {
+
   0%,
   100% {
     transform:
-      translateY(0)
-      rotate(-5deg);
+      translateY(0) rotate(-5deg);
   }
 
   50% {
     transform:
-      translateY(-12px)
-      rotate(5deg);
+      translateY(-12px) rotate(5deg);
   }
 }
 
@@ -974,21 +891,20 @@ body {
 }
 
 @keyframes sparkle {
+
   0%,
   100% {
     opacity: 0.2;
 
     transform:
-      scale(0.8)
-      rotate(0);
+      scale(0.8) rotate(0);
   }
 
   50% {
     opacity: 1;
 
     transform:
-      scale(1.25)
-      rotate(20deg);
+      scale(1.25) rotate(20deg);
   }
 }
 
@@ -1002,6 +918,7 @@ body {
 }
 
 @keyframes babyFloat {
+
   0%,
   100% {
     transform: translateY(0);
@@ -1017,17 +934,16 @@ body {
 }
 
 @keyframes babyBounce {
+
   0%,
   100% {
     transform:
-      scale(1)
-      rotate(0);
+      scale(1) rotate(0);
   }
 
   50% {
     transform:
-      scale(1.04)
-      rotate(-2deg);
+      scale(1.04) rotate(-2deg);
   }
 }
 
@@ -1045,17 +961,16 @@ body {
 }
 
 @keyframes decorationFloat {
+
   0%,
   100% {
     transform:
-      translateY(0)
-      rotate(0);
+      translateY(0) rotate(0);
   }
 
   50% {
     transform:
-      translateY(-5px)
-      rotate(4deg);
+      translateY(-5px) rotate(4deg);
   }
 }
 
@@ -1069,6 +984,7 @@ body {
 }
 
 @keyframes ctaGlow {
+
   0%,
   100% {
     box-shadow:
@@ -1087,6 +1003,7 @@ body {
    ===================================================== */
 
 @media (max-height: 650px) {
+
   .sparkle,
   .floating-heart {
     opacity: 0.35;
@@ -1124,10 +1041,345 @@ body {
    ===================================================== */
 
 @media (prefers-reduced-motion: reduce) {
+
   *,
   *::before,
   *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
+  }
+}
+
+/* =========================================================
+   GENDER GUESS PAGE
+   ========================================================= */
+
+/* Page entrance */
+
+@keyframes pageFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-page-fade-up {
+  animation: pageFadeUp 0.7s ease-out both;
+}
+
+.animate-page-fade-up-delay-1 {
+  animation: pageFadeUp 0.7s 0.12s ease-out both;
+}
+
+.animate-page-fade-up-delay-3 {
+  animation: pageFadeUp 0.7s 0.35s ease-out both;
+}
+
+
+/* Cards entrance */
+
+@keyframes cardIn {
+  from {
+    opacity: 0;
+    transform: translateY(28px) scale(0.94);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-card-in-1 {
+  animation: cardIn 0.7s 0.25s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.animate-card-in-2 {
+  animation: cardIn 0.7s 0.38s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+
+/* Gentle background glow */
+
+@keyframes softGlow {
+
+  0%,
+  100% {
+    opacity: 0.55;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.8;
+    transform: scale(1.08);
+  }
+}
+
+.animate-soft-glow {
+  animation: softGlow 6s ease-in-out infinite;
+}
+
+.animate-soft-glow-delay {
+  animation: softGlow 7s 1.2s ease-in-out infinite;
+}
+
+.animate-soft-glow-delay-2 {
+  animation: softGlow 8s 2s ease-in-out infinite;
+}
+
+
+/* Floating decorations */
+
+@keyframes floatDecoration {
+
+  0%,
+  100% {
+    transform: translateY(0) rotate(-3deg);
+  }
+
+  50% {
+    transform: translateY(-12px) rotate(4deg);
+  }
+}
+
+.animate-float {
+  animation: floatDecoration 4s ease-in-out infinite;
+}
+
+.animate-float-delay {
+  animation: floatDecoration 5s 1s ease-in-out infinite;
+}
+
+.animate-float-slow {
+  animation: floatDecoration 6s 0.5s ease-in-out infinite;
+}
+
+
+/* Twinkling dots */
+
+@keyframes twinkle {
+
+  0%,
+  100% {
+    opacity: 0.2;
+    transform: scale(0.8);
+  }
+
+  50% {
+    opacity: 0.8;
+    transform: scale(1.3);
+  }
+}
+
+.animate-twinkle {
+  animation: twinkle 2.5s ease-in-out infinite;
+}
+
+.animate-twinkle-delay {
+  animation: twinkle 3s 0.8s ease-in-out infinite;
+}
+
+.animate-twinkle-delay-2 {
+  animation: twinkle 2.8s 1.4s ease-in-out infinite;
+}
+
+
+/* Guess cards */
+
+.guess-card {
+  position: relative;
+  min-height: 150px;
+  overflow: hidden;
+  border-radius: 24px;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.72);
+  padding: 22px 16px;
+  box-shadow:
+    0 12px 35px rgba(48, 37, 47, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition:
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.35s ease,
+    border-color 0.35s ease,
+    background 0.35s ease;
+}
+
+.guess-card:hover {
+  transform: translateY(-7px);
+}
+
+.guess-card:active {
+  transform: translateY(-2px) scale(0.98);
+}
+
+.guess-card-girl:hover {
+  border-color: rgba(232, 62, 115, 0.35);
+  box-shadow:
+    0 18px 45px rgba(232, 62, 115, 0.14),
+    0 0 0 5px rgba(232, 62, 115, 0.04);
+}
+
+.guess-card-boy:hover {
+  border-color: rgba(112, 72, 232, 0.35);
+  box-shadow:
+    0 18px 45px rgba(112, 72, 232, 0.14),
+    0 0 0 5px rgba(112, 72, 232, 0.04);
+}
+
+
+/* Selected card */
+
+.guess-card-selected {
+  transform: translateY(-6px) scale(1.025);
+}
+
+.guess-card-girl.guess-card-selected {
+  border-color: rgba(232, 62, 115, 0.55);
+  background: rgba(255, 242, 247, 0.9);
+  box-shadow:
+    0 20px 50px rgba(232, 62, 115, 0.18),
+    0 0 0 5px rgba(232, 62, 115, 0.06);
+}
+
+.guess-card-boy.guess-card-selected {
+  border-color: rgba(112, 72, 232, 0.55);
+  background: rgba(246, 243, 255, 0.92);
+  box-shadow:
+    0 20px 50px rgba(112, 72, 232, 0.18),
+    0 0 0 5px rgba(112, 72, 232, 0.06);
+}
+
+
+/* Card icons */
+
+.guess-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  font-size: 34px;
+  transition:
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.35s ease;
+}
+
+.guess-icon-girl {
+  background: rgba(255, 107, 138, 0.12);
+  box-shadow: 0 8px 25px rgba(232, 62, 115, 0.08);
+}
+
+.guess-icon-boy {
+  background: rgba(112, 72, 232, 0.1);
+  box-shadow: 0 8px 25px rgba(112, 72, 232, 0.08);
+}
+
+
+/* Selection sparkles */
+
+@keyframes selectionSparkle {
+  0% {
+    opacity: 0;
+    transform: scale(0.4) rotate(-20deg);
+  }
+
+  45% {
+    opacity: 1;
+    transform: scale(1.15) rotate(10deg);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(0.8) rotate(25deg);
+  }
+}
+
+.selection-sparkle {
+  animation: selectionSparkle 1.2s ease-out infinite;
+}
+
+.sparkle-2 {
+  animation-delay: 0.35s;
+}
+
+
+/* Reaction */
+
+@keyframes reactionIn {
+  0% {
+    opacity: 0;
+    transform: translateY(10px) scale(0.92);
+  }
+
+  70% {
+    transform: translateY(-2px) scale(1.02);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-reaction {
+  animation: reactionIn 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+
+/* Continue button */
+
+@keyframes continueGlow {
+
+  0%,
+  100% {
+    box-shadow:
+      0 8px 25px rgba(48, 37, 47, 0.16);
+  }
+
+  50% {
+    box-shadow:
+      0 10px 32px rgba(48, 37, 47, 0.26);
+  }
+}
+
+.continue-ready {
+  animation: continueGlow 2.5s ease-in-out infinite;
+}
+
+
+/* Accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .animate-page-fade-up,
+  .animate-page-fade-up-delay-1,
+  .animate-page-fade-up-delay-3,
+  .animate-card-in-1,
+  .animate-card-in-2,
+  .animate-soft-glow,
+  .animate-soft-glow-delay,
+  .animate-soft-glow-delay-2,
+  .animate-float,
+  .animate-float-delay,
+  .animate-float-slow,
+  .animate-twinkle,
+  .animate-twinkle-delay,
+  .animate-twinkle-delay-2,
+  .selection-sparkle,
+  .animate-reaction,
+  .continue-ready {
+    animation: none;
+  }
+
+  .guess-card {
+    transition: none;
   }
 }
