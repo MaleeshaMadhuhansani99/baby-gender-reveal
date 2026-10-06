@@ -9,37 +9,37 @@ export default function Welcome() {
       <div className="pointer-events-none absolute bottom-0 left-1/2 h-64 w-64 -translate-x-1/2 rounded-full bg-[#ffb347]/20 blur-3xl" />
 
       {/* Floating decorations */}
-      <div className="pointer-events-none absolute left-[8%] top-[14%] text-[#e83e73]">
+      <div className="pointer-events-none absolute left-[8%] top-[14%] hidden text-[#e83e73] sm:block">
         <Heart size={21} fill="currentColor" />
       </div>
 
-      <div className="pointer-events-none absolute right-[10%] top-[11%] text-[#7048e8]">
+      <div className="pointer-events-none absolute right-[10%] top-[11%] hidden text-[#7048e8] sm:block">
         <Sparkles size={24} />
       </div>
 
-      <div className="pointer-events-none absolute left-[12%] top-[47%] text-[#4f7cff]">
+      <div className="pointer-events-none absolute left-[12%] top-[47%] hidden text-[#4f7cff] sm:block">
         <Stars size={20} />
       </div>
 
-      <div className="pointer-events-none absolute bottom-[19%] right-[10%] text-[#ff6b5f]">
+      <div className="pointer-events-none absolute bottom-[19%] right-[10%] hidden text-[#ff6b5f] sm:block">
         <Heart size={18} fill="currentColor" />
       </div>
 
       {/* Main content */}
-      <section className="relative z-10 flex min-h-screen flex-col items-center justify-center px-6 py-12 text-center">
+      <section className="relative z-10 flex min-h-[100svh] flex-col items-center justify-center px-4 py-8 text-center sm:px-6 sm:py-12">
         {/* Top label */}
-        <div className="mb-6 flex items-center gap-2 rounded-full bg-white px-5 py-2.5 text-xs font-bold uppercase tracking-wider text-[#7048e8] shadow-sm ring-1 ring-[#eee5f5]">
+        <div className="mb-5 flex max-w-full items-center justify-center gap-2 rounded-full bg-white px-4 py-2.5 text-[0.65rem] font-bold uppercase tracking-[0.12em] text-[#7048e8] shadow-sm ring-1 ring-[#eee5f5] sm:mb-6 sm:px-5 sm:text-xs sm:tracking-wider">
           <Sparkles size={14} className="text-[#ff9f1c]" />
           A little surprise is waiting
         </div>
 
         {/* Heading */}
-        <div className="max-w-md">
-          <p className="mb-3 text-sm font-extrabold uppercase tracking-[0.3em] text-[#e83e73]">
+        <div className="w-full max-w-md">
+          <p className="mb-3 text-xs font-extrabold uppercase tracking-[0.22em] text-[#e83e73] sm:text-sm sm:tracking-[0.3em]">
             Baby on the way
           </p>
 
-          <h1 className="font-serif text-5xl font-bold leading-[1.05] tracking-tight text-[#ae0ea1] sm:text-6xl">
+          <h1 className="font-serif text-[clamp(2.5rem,9vw,3.75rem)] font-bold leading-[1.05] tracking-tight text-[#ae0ea1]">
             Someone very
             <span className="block text-[#e83e73]">
               special
@@ -47,14 +47,14 @@ export default function Welcome() {
             is coming...
           </h1>
 
-          <p className="mx-auto mt-6 max-w-sm text-base font-medium leading-7 text-[#625761]">
+          <p className="mx-auto mt-5 max-w-sm text-[clamp(0.9rem,3.8vw,1rem)] font-medium leading-7 text-[#625761] sm:mt-6">
             We have a tiny secret to share with you.
             But you’ll have to play along to discover it. 👀
           </p>
         </div>
 
         {/* Baby illustration */}
-        <div className="relative my-10">
+        <div className="relative my-7 sm:my-10">
           {/* Glow */}
           <div className="absolute inset-0 scale-125 rounded-full bg-[#ff6b8a]/15 blur-xl" />
 
@@ -62,8 +62,8 @@ export default function Welcome() {
           <div className="absolute inset-0 scale-110 rounded-full border-2 border-[#e83e73]/20" />
 
           {/* Illustration */}
-          <div className="relative flex h-48 w-48 items-center justify-center rounded-full bg-gradient-to-br from-[#ffd6df] via-white to-[#dcd2ff] shadow-[0_18px_55px_rgba(232,62,115,0.20)] sm:h-56 sm:w-56">
-            <div className="text-7xl sm:text-8xl">
+          <div className="relative flex h-[clamp(9rem,42vw,14rem)] w-[clamp(9rem,42vw,14rem)] items-center justify-center rounded-full bg-gradient-to-br from-[#ffd6df] via-white to-[#dcd2ff] shadow-[0_18px_55px_rgba(232,62,115,0.20)]">
+            <div className="text-[clamp(4.5rem,18vw,6rem)]">
               👶
             </div>
           </div>
@@ -81,7 +81,7 @@ export default function Welcome() {
         {/* CTA */}
         <button
           type="button"
-          className="group flex items-center gap-3 rounded-full bg-[#e83e73] px-8 py-4 text-sm font-bold text-white shadow-[0_10px_30px_rgba(232,62,115,0.30)] transition duration-300 hover:-translate-y-1 hover:bg-[#d92f63] hover:shadow-[0_15px_35px_rgba(232,62,115,0.35)] active:translate-y-0"
+          className="group flex min-h-12 items-center gap-3 rounded-full bg-[#e83e73] px-6 py-3 text-sm font-bold text-white shadow-[0_10px_30px_rgba(232,62,115,0.30)] transition duration-300 hover:-translate-y-1 hover:bg-[#d92f63] hover:shadow-[0_15px_35px_rgba(232,62,115,0.35)] active:translate-y-0 sm:px-8 sm:py-4"
         >
           <span>Let’s find out</span>
 
@@ -91,7 +91,7 @@ export default function Welcome() {
         </button>
 
         {/* Bottom hint */}
-        <p className="mt-6 text-xs font-semibold tracking-wide text-[#81727d]">
+        <p className="mt-5 text-xs font-semibold tracking-wide text-[#81727d] sm:mt-6">
           A little journey awaits you ✨
         </p>
       </section>
