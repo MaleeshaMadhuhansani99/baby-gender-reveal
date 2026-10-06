@@ -42,31 +42,6 @@ export default function Welcome() {
         <Sparkles size={17} />
       </div>
 
-      {/* Flying butterflies */}
-      <div className="butterfly butterfly-one">
-        <span className="butterfly-wing butterfly-wing-left" />
-        <span className="butterfly-body" />
-        <span className="butterfly-wing butterfly-wing-right" />
-      </div>
-
-      <div className="butterfly butterfly-two">
-        <span className="butterfly-wing butterfly-wing-left" />
-        <span className="butterfly-body" />
-        <span className="butterfly-wing butterfly-wing-right" />
-      </div>
-
-      <div className="butterfly butterfly-three">
-        <span className="butterfly-wing butterfly-wing-left" />
-        <span className="butterfly-body" />
-        <span className="butterfly-wing butterfly-wing-right" />
-      </div>
-
-      <div className="butterfly butterfly-four">
-        <span className="butterfly-wing butterfly-wing-left" />
-        <span className="butterfly-body" />
-        <span className="butterfly-wing butterfly-wing-right" />
-      </div>
-
       {/* =====================================================
           MAIN CONTENT
           ===================================================== */}
@@ -161,6 +136,31 @@ export default function Welcome() {
           </div>
         </div>
       </section>
+
+      {/* Flying butterflies */}
+      <div className="butterfly butterfly-one">
+        <span className="butterfly-wing butterfly-wing-left" />
+        <span className="butterfly-body" />
+        <span className="butterfly-wing butterfly-wing-right" />
+      </div>
+
+      <div className="butterfly butterfly-two">
+        <span className="butterfly-wing butterfly-wing-left" />
+        <span className="butterfly-body" />
+        <span className="butterfly-wing butterfly-wing-right" />
+      </div>
+
+      <div className="butterfly butterfly-three">
+        <span className="butterfly-wing butterfly-wing-left" />
+        <span className="butterfly-body" />
+        <span className="butterfly-wing butterfly-wing-right" />
+      </div>
+
+      <div className="butterfly butterfly-four">
+        <span className="butterfly-wing butterfly-wing-left" />
+        <span className="butterfly-body" />
+        <span className="butterfly-wing butterfly-wing-right" />
+      </div>
     </main>
   )
 }
