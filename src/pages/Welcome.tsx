@@ -1,4 +1,4 @@
-import { Heart, Sparkles, Stars } from 'lucide-react'
+import {Heart, Sparkles, Stars} from 'lucide-react'
 
 export default function Welcome() {
   return (
@@ -29,8 +29,22 @@ export default function Welcome() {
       <section className="relative z-10 flex min-h-[100svh] flex-col items-center justify-center px-4 py-8 text-center sm:px-6 sm:py-12">
         {/* Top label */}
         <div className="mb-5 flex max-w-full items-center justify-center gap-2 rounded-full bg-white px-4 py-2.5 text-[0.65rem] font-bold uppercase tracking-[0.12em] text-[#7048e8] shadow-sm ring-1 ring-[#eee5f5] sm:mb-6 sm:px-5 sm:text-xs sm:tracking-wider">
-          <Sparkles size={14} className="text-[#ff9f1c]" />
-          A little surprise is waiting
+          <Sparkles size={14} className="text-[#ff9f1c]" />A little surprise is
+          waiting
+        </div>
+
+        <div className="mb-7">
+          <p className="text-xs font-bold uppercase tracking-[0.28em] text-[#7048e8]">
+            A little one is on the way
+          </p>
+
+          <h2 className="mt-2 font-serif text-2xl font-bold text-[#30252f] sm:text-3xl">
+            Dilki <span className="text-[#e83e73]">&</span> Asinthaka
+          </h2>
+
+          <p className="mt-1 text-sm font-medium text-[#81727d]">
+            are getting ready for their greatest little adventure ✨
+          </p>
         </div>
 
         {/* Heading */}
@@ -41,15 +55,13 @@ export default function Welcome() {
 
           <h1 className="font-serif text-[clamp(2.5rem,9vw,3.75rem)] font-bold leading-[1.05] tracking-tight text-[#720c7d]">
             Someone very
-            <span className="block text-[#e83e73]">
-              special
-            </span>
+            <span className="block text-[#e83e73]">special</span>
             is coming...
           </h1>
 
           <p className="mx-auto mt-5 max-w-sm text-[clamp(0.9rem,3.8vw,1rem)] font-medium leading-7 text-[#625761] sm:mt-6">
-            We have a tiny secret to share with you.
-            But you’ll have to play along to discover it. 👀
+            We have a tiny secret to share with you. But you’ll have to play
+            along to discover it. 👀
           </p>
         </div>
 
@@ -63,9 +75,7 @@ export default function Welcome() {
 
           {/* Illustration */}
           <div className="relative flex h-[clamp(9rem,42vw,14rem)] w-[clamp(9rem,42vw,14rem)] items-center justify-center rounded-full bg-gradient-to-br from-[#ffd6df] via-white to-[#dcd2ff] shadow-[0_18px_55px_rgba(232,62,115,0.20)]">
-            <div className="text-[clamp(4.5rem,18vw,6rem)]">
-              👶
-            </div>
+            <div className="text-[clamp(4.5rem,18vw,6rem)]">👶</div>
           </div>
 
           {/* Decorations */}
