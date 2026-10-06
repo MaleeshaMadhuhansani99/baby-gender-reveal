@@ -39,7 +39,7 @@ export default function Welcome() {
             Baby on the way
           </p>
 
-          <h1 className="font-serif text-5xl font-bold leading-[1.05] tracking-tight text-[#30252f] sm:text-6xl">
+          <h1 className="font-serif text-5xl font-bold leading-[1.05] tracking-tight text-[#ae0ea1] sm:text-6xl">
             Someone very
             <span className="block text-[#e83e73]">
               special
