@@ -1,6 +1,9 @@
 import {Heart, Sparkles, Stars} from 'lucide-react'
+interface WelcomeProps {
+  onContinue: () => void
+}
 
-export default function Welcome() {
+export default function Welcome({onContinue}: WelcomeProps) {
   return (
     <main className="relative h-[100svh] w-full overflow-hidden bg-[#fff8f5] text-[#30252f]">
       {/* Background glow */}
@@ -153,6 +156,7 @@ export default function Welcome() {
             <button
               type="button"
               className="cta-glow group flex min-h-[clamp(2.5rem,6vh,3.2rem)] items-center gap-2 rounded-full bg-[#e83e73] px-[clamp(1.1rem,4vw,2rem)] py-2 text-[clamp(0.7rem,1.7vw,0.9rem)] font-bold text-white transition duration-300 hover:-translate-y-1 hover:bg-[#d92f63] active:translate-y-0"
+              onClick={onContinue}
             >
               <span>Let’s find out</span>
 
