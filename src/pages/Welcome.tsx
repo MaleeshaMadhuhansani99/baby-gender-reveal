@@ -38,7 +38,7 @@ export default function Welcome() {
             A little one is on the way
           </p>
 
-          <h2 className="mt-2 font-serif text-2xl font-bold text-[#30252f] sm:text-3xl">
+          <h2 className="mt-2 font-serif text-2xl font-bold text-[#303b82] sm:text-3xl">
             Dilki <span className="text-[#e83e73]">&</span> Asinthaka
           </h2>
 
