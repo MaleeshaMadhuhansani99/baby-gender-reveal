@@ -12,6 +12,7 @@ function App() {
       <GenderGuess
         onContinue={() => {
           // Next we will connect the mini-game here
+         // DileeAsiBaby1234
           console.log('Continue to mini-game')
         }}
       />
