@@ -6,6 +6,7 @@ export interface GuestResponse {
   looks_like?: 'mommy' | 'daddy' | 'both'
   loves_most?: 'mommy' | 'daddy' | 'both'
   wish?: string
+  baby_nickname?: string
 }
 
 export async function saveGuestResponse(response: GuestResponse) {
