@@ -15,7 +15,6 @@ type Props = {
 const choices = [
   { value: 'mommy', label: 'Mommy 💗', emoji: '👩🏻' },
   { value: 'daddy', label: 'Daddy 💙', emoji: '👨🏻' },
-  { value: 'both', label: 'A little of both 🥹', emoji: '👨‍👩‍👧' },
 ] as const
 
 export default function BabyQuestions({ onContinue }: Props) {
