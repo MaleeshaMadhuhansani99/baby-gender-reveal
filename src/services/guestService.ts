@@ -1,24 +1,29 @@
 import { supabase } from '../lib/supabase'
+import type { BabyAnswers } from '../components/BabyQuestions'
+import type { BabyGender } from '../components/Reveal'
 
-export interface GuestResponse {
+export type GuestResponse = {
   name: string
-  guess: 'girl' | 'boy'
-  looks_like?: 'mommy' | 'daddy' | 'both'
-  loves_most?: 'mommy' | 'daddy' | 'both'
-  wish?: string
-  baby_nickname?: string
+  guess: BabyGender
+  looks_like: BabyAnswers['looks_like']
+  loves_most: BabyAnswers['loves_most']
+  baby_nickname: string
+  wish: string
 }
 
 export async function saveGuestResponse(response: GuestResponse) {
-  const { data, error } = await supabase
+  const { error } = await supabase
     .from('guests')
-    .insert(response)
-    .select()
-    .single()
+    .insert({
+      name: response.name,
+      guess: response.guess,
+      looks_like: response.looks_like,
+      loves_most: response.loves_most,
+      baby_nickname: response.baby_nickname,
+      wish: response.wish,
+    })
 
   if (error) {
     throw error
   }
-
-  return data
 }
