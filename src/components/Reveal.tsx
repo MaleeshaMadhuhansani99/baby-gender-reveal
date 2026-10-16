@@ -1,5 +1,5 @@
 
-import { Heart, Sparkles, Stars } from 'lucide-react'
+import { Heart, Stars } from 'lucide-react'
 
 export type BabyGender = 'girl' | 'boy'
 
