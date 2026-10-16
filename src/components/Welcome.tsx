@@ -170,7 +170,6 @@ export default function Welcome({onContinue}: WelcomeProps) {
               A little journey awaits you ✨
             </p>
           </div>
-          <SupabaseTest />
         </div>
       </section>
     </main>
