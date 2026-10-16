@@ -1,5 +1,4 @@
 import {Heart, Sparkles, Stars} from 'lucide-react'
-import SupabaseTest from './SuperbaseTest'
 interface WelcomeProps {
   onContinue: () => void
 }
