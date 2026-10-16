@@ -1,4 +1,5 @@
 import {Heart, Sparkles, Stars} from 'lucide-react'
+import SupabaseTest from './SuperbaseTest'
 interface WelcomeProps {
   onContinue: () => void
 }
@@ -169,6 +170,7 @@ export default function Welcome({onContinue}: WelcomeProps) {
               A little journey awaits you ✨
             </p>
           </div>
+          <SupabaseTest />
         </div>
       </section>
     </main>
