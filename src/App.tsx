@@ -6,29 +6,48 @@ import GuestName from './components/GuestName'
 import GenderGuess from './components/GenderGuess'
 import BabyQuestions from './components/BabyQuestions'
 import type { BabyAnswers } from './components/BabyQuestions'
-import MiniGame from './components/MiniGame'
+// import MiniGame from './components/MiniGame'
 import Countdown from './components/Countdown'
 import Reveal from './components/Reveal'
 import type { BabyGender } from './components/Reveal'
 import WishForm from './components/WishForm'
+import WishesWall from './components/WishesWall'
 
 type Page =
   | 'welcome'
   | 'name'
   | 'guess'
   | 'questions'
-  | 'game'
+  // | 'game'
   | 'countdown'
   | 'reveal'
   | 'wish'
+  | 'wishes'
 
 function App() {
-  const [page, setPage] = useState<Page>('welcome')
+  const [page, setPage] = useState<Page>(() =>
+    window.location.hash === '#wishes' ? 'wishes' : 'welcome'
+  )
+
   const [guestName, setGuestName] = useState('')
   const [guess, setGuess] = useState<BabyGender>('girl')
   const [answers, setAnswers] = useState<BabyAnswers | null>(null)
 
   const babyGender: BabyGender = 'boy'
+
+  const openWishes = () => {
+    window.location.hash = 'wishes'
+    setPage('wishes')
+  }
+
+  const closeWishes = () => {
+    window.location.hash = ''
+    setPage('welcome')
+  }
+
+  if (page === 'wishes') {
+    return <WishesWall onBack={closeWishes} />
+  }
 
   if (page === 'name') {
     return (
@@ -57,15 +76,15 @@ function App() {
       <BabyQuestions
         onContinue={(babyAnswers) => {
           setAnswers(babyAnswers)
-          setPage('game')
+          setPage('countdown')
         }}
       />
     )
   }
 
-  if (page === 'game') {
-    return <MiniGame onComplete={() => setPage('countdown')} />
-  }
+  // if (page === 'game') {
+  //   return <MiniGame onComplete={() => setPage('countdown')} />
+  // }
 
   if (page === 'countdown') {
     return <Countdown onComplete={() => setPage('reveal')} />
@@ -86,11 +105,14 @@ function App() {
         name={guestName}
         guess={guess}
         answers={answers}
+        onViewWishes={openWishes}
       />
     )
   }
 
-  return <Welcome onContinue={() => setPage('name')} />
+  return (
+    <Welcome onContinue={() => setPage('name')} />
+  )
 }
 
 export default App
