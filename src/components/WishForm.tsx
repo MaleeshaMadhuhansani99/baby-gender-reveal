@@ -2,6 +2,7 @@
 import { useState } from 'react'
 import { Heart, Send, Sparkles } from 'lucide-react'
 import { saveGuestResponse } from '../services/guestService'
+import { playSuccessSound } from '../services/soundService'
 import type { BabyAnswers } from './BabyQuestions'
 import type { BabyGender } from './Reveal'
 
@@ -38,8 +39,10 @@ export default function WishForm({
         loves_most: answers.loves_most,
         baby_nickname: answers.baby_nickname,
         wish: wish.trim(),
+        created_at: new Date().toISOString(),
       })
 
+      playSuccessSound()
       setSaved(true)
     } catch (error) {
       console.error('Could not save the guest response:', error)

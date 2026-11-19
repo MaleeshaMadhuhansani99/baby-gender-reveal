@@ -12,6 +12,7 @@ import Reveal from './components/Reveal'
 import type { BabyGender } from './components/Reveal'
 import WishForm from './components/WishForm'
 import WishesWall from './components/WishesWall'
+import SoundControls from './components/SoundControl'
 
 type Page =
   | 'welcome'
@@ -45,73 +46,82 @@ function App() {
     setPage('welcome')
   }
 
-  if (page === 'wishes') {
-    return <WishesWall onBack={closeWishes} />
-  }
+  const renderPage = () => {
+    if (page === 'wishes') {
+      return <WishesWall onBack={closeWishes} />
+    }
 
-  if (page === 'name') {
+    if (page === 'name') {
+      return (
+        <GuestName
+          onContinue={(name) => {
+            setGuestName(name.trim())
+            setPage('guess')
+          }}
+        />
+      )
+    }
+
+    if (page === 'guess') {
+      return (
+        <GenderGuess
+          onContinue={(selectedGuess) => {
+            setGuess(selectedGuess)
+            setPage('questions')
+          }}
+        />
+      )
+    }
+
+    if (page === 'questions') {
+      return (
+        <BabyQuestions
+          onContinue={(babyAnswers) => {
+            setAnswers(babyAnswers)
+            setPage('countdown')
+          }}
+        />
+      )
+    }
+
+    // if (page === 'game') {
+    //   return <MiniGame onComplete={() => setPage('countdown')} />
+    // }
+
+    if (page === 'countdown') {
+      return <Countdown onComplete={() => setPage('reveal')} />
+    }
+
+    if (page === 'reveal') {
+      return (
+        <Reveal
+          gender={babyGender}
+          onContinue={() => setPage('wish')}
+        />
+      )
+    }
+
+    if (page === 'wish' && answers) {
+      return (
+        <WishForm
+          name={guestName}
+          guess={guess}
+          answers={answers}
+          onViewWishes={openWishes}
+        />
+      )
+    }
+
     return (
-      <GuestName
-        onContinue={(name) => {
-          setGuestName(name.trim())
-          setPage('guess')
-        }}
-      />
-    )
-  }
-
-  if (page === 'guess') {
-    return (
-      <GenderGuess
-        onContinue={(selectedGuess) => {
-          setGuess(selectedGuess)
-          setPage('questions')
-        }}
-      />
-    )
-  }
-
-  if (page === 'questions') {
-    return (
-      <BabyQuestions
-        onContinue={(babyAnswers) => {
-          setAnswers(babyAnswers)
-          setPage('countdown')
-        }}
-      />
-    )
-  }
-
-  // if (page === 'game') {
-  //   return <MiniGame onComplete={() => setPage('countdown')} />
-  // }
-
-  if (page === 'countdown') {
-    return <Countdown onComplete={() => setPage('reveal')} />
-  }
-
-  if (page === 'reveal') {
-    return (
-      <Reveal
-        gender={babyGender}
-        onContinue={() => setPage('wish')}
-      />
-    )
-  }
-
-  if (page === 'wish' && answers) {
-    return (
-      <WishForm
-        name={guestName}
-        guess={guess}
-        answers={answers}
-        onViewWishes={openWishes}
-      />
+      <Welcome onContinue={() => setPage('name')} />
     )
   }
 
   return (
-    <Welcome onContinue={() => setPage('name')} />
+    <>
+      <SoundControls />
+      {renderPage()}
+    </>
   )
 }
 

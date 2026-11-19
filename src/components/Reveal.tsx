@@ -1,5 +1,7 @@
 
+import { useEffect, useRef } from 'react'
 import { Heart, Stars } from 'lucide-react'
+import { playRevealSound } from '../services/soundService'
 
 export type BabyGender = 'girl' | 'boy'
 
@@ -10,6 +12,14 @@ type Props = {
 
 export default function Reveal({ gender, onContinue }: Props) {
   const isGirl = gender === 'girl'
+  const soundPlayed = useRef(false)
+
+  useEffect(() => {
+    if (!soundPlayed.current) {
+      soundPlayed.current = true
+      playRevealSound()
+    }
+  }, [])
 
   return (
     <main
