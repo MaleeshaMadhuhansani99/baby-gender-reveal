@@ -58,7 +58,7 @@ export default function WishesWall({ onBack }: WishesWallProps) {
   }
 
   return (
-    <main className="min-h-screen w-full overflow-y-auto bg-[#FFF8F5] px-5 py-10">
+    <main className="h-[100dvh] w-full overflow-y-auto overscroll-contain bg-[#FFF8F5] px-5 py-10">
       <div className="mx-auto w-full max-w-6xl">
 
         {/* Back button */}

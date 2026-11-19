@@ -19,7 +19,7 @@ export default function Reveal({ gender, onContinue }: Props) {
           : 'bg-gradient-to-br from-sky-100 via-[#FFF8F5] to-blue-200'
       }`}
     >
-      <div className="pointer-events-none absolute left-5 top-8 animate-bounce text-3xl">
+      <div className="pointer-events-none absolute left-5 top-8 animate-bounce text-3xl sparkle sparkle-one">
         ✨
       </div>
       <div className="pointer-events-none absolute right-6 top-16 animate-pulse text-3xl">
@@ -34,7 +34,7 @@ export default function Reveal({ gender, onContinue }: Props) {
 
       <section className="relative w-full max-w-md">
         <Stars
-          className={`mx-auto mb-3 ${
+          className={`mx-auto mb-3 sparkle sparkle-one ${
             isGirl ? 'text-pink-500' : 'text-blue-500'
           }`}
           size={36}
