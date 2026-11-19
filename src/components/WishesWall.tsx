@@ -1,15 +1,21 @@
 
 import { useEffect, useState } from 'react'
-import { Heart, ArrowLeft, RefreshCw, Baby } from 'lucide-react'
+import {
+  Heart,
+  ArrowLeft,
+  RefreshCw,
+  Baby,
+  Sparkles,
+} from 'lucide-react'
 import { fetchWishes } from '../services/guestService'
-import type { Wish } from '../services/guestService'
+import type { GuestResponse } from '../services/guestService'
 
 interface WishesWallProps {
   onBack: () => void
 }
 
 export default function WishesWall({ onBack }: WishesWallProps) {
-  const [wishes, setWishes] = useState<Wish[]>([])
+  const [wishes, setWishes] = useState<GuestResponse[]>([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState('')
 
@@ -57,6 +63,26 @@ export default function WishesWall({ onBack }: WishesWallProps) {
     return 'bg-purple-50 text-purple-600 border-purple-100'
   }
 
+  const boyCount = wishes.filter(
+    (item) => item.guess?.toLowerCase() === 'boy',
+  ).length
+
+  const girlCount = wishes.filter(
+    (item) => item.guess?.toLowerCase() === 'girl',
+  ).length
+
+  const totalGuesses = boyCount + girlCount
+
+  const boyPercentage =
+    totalGuesses > 0
+      ? Math.round((boyCount / totalGuesses) * 100)
+      : 0
+
+  const girlPercentage =
+    totalGuesses > 0
+      ? Math.round((girlCount / totalGuesses) * 100)
+      : 0
+
   return (
     <main className="h-[100dvh] w-full overflow-y-auto overscroll-contain bg-[#FFF8F5] px-5 py-10">
       <div className="mx-auto w-full max-w-6xl">
@@ -87,7 +113,7 @@ export default function WishesWall({ onBack }: WishesWallProps) {
 
           <p className="mx-auto max-w-xl text-lg text-gray-600">
             Every little message is filled with love. Here are the beautiful
-            wishes for our little miracle.
+            wishes and predictions for our little miracle.
           </p>
 
           {!loading && !error && (
@@ -138,7 +164,49 @@ export default function WishesWall({ onBack }: WishesWallProps) {
           </div>
         )}
 
-        {/* Wishes grid */}
+        {/* Prediction percentages */}
+        {!loading && !error && wishes.length > 0 && (
+          <div className="mb-10 rounded-3xl border border-pink-100 bg-white p-6 shadow-sm">
+            <div className="mb-5 text-center">
+              <h2 className="text-2xl font-bold text-[#720C7D]">
+                Team Boy or Team Girl? 💕
+              </h2>
+
+              <p className="mt-1 text-sm text-gray-500">
+                What are everyone guessing?
+              </p>
+            </div>
+
+            <div className="mb-4 flex justify-between text-sm font-semibold">
+              <span className="text-blue-600">
+                💙 Boy {boyPercentage}%
+              </span>
+
+              <span className="text-pink-600">
+                Girl {girlPercentage}% 💗
+              </span>
+            </div>
+
+            <div className="flex h-5 overflow-hidden rounded-full bg-pink-100">
+              <div
+                className="bg-blue-400 transition-all duration-500"
+                style={{ width: `${boyPercentage}%` }}
+              />
+
+              <div
+                className="bg-pink-400 transition-all duration-500"
+                style={{ width: `${girlPercentage}%` }}
+              />
+            </div>
+
+            <p className="mt-3 text-center text-xs text-gray-400">
+              Based on {totalGuesses} gender{' '}
+              {totalGuesses === 1 ? 'guess' : 'guesses'}
+            </p>
+          </div>
+        )}
+
+        {/* Wishes and predictions together */}
         {!loading && !error && wishes.length > 0 && (
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {wishes.map((item, index) => (
@@ -167,10 +235,52 @@ export default function WishesWall({ onBack }: WishesWallProps) {
                   Guessed: {item.guess || 'Not specified'}
                 </div>
 
+                {/* Guest predictions */}
+                <div className="mb-6 space-y-4 rounded-2xl bg-[#FFF8F5] p-4">
+                  <div>
+                    <p className="mb-1 flex items-center gap-2 text-xs font-semibold text-[#720C7D]">
+                      <Baby size={15} />
+                      Who will baby look like?
+                    </p>
+
+                    <p className="text-sm text-gray-700">
+                      {item.looks_like || 'Not answered'}
+                    </p>
+                  </div>
+
+                  <div>
+                    <p className="mb-1 flex items-center gap-2 text-xs font-semibold text-[#720C7D]">
+                      <Heart size={15} />
+                      What will baby love most?
+                    </p>
+
+                    <p className="text-sm text-gray-700">
+                      {item.loves_most || 'Not answered'}
+                    </p>
+                  </div>
+
+                  <div>
+                    <p className="mb-1 flex items-center gap-2 text-xs font-semibold text-[#720C7D]">
+                      <Sparkles size={15} />
+                      Baby nickname
+                    </p>
+
+                    <p className="text-sm text-gray-700">
+                      {item.baby_nickname || 'Not provided'}
+                    </p>
+                  </div>
+                </div>
+
                 {/* Wish */}
-                <p className="mb-6 min-h-20 whitespace-pre-wrap break-words leading-relaxed text-gray-700">
-                  "{item.wish}"
-                </p>
+                <div className="mb-6">
+                  <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-pink-500">
+                    A little wish for baby 💕
+                  </p>
+
+                  <p className="min-h-20 whitespace-pre-wrap break-words leading-relaxed text-gray-700">
+                    "{item.wish}"
+                  </p>
+                </div>
 
                 {/* Guest details */}
                 <div className="border-t border-pink-100 pt-4">

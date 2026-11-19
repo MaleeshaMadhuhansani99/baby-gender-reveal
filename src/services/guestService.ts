@@ -10,12 +10,6 @@ export type GuestResponse = {
   loves_most: BabyAnswers['loves_most']
   baby_nickname: string
   wish: string
-}
-
-export interface Wish {
-  name: string
-  guess: BabyGender
-  wish: string
   created_at: string
 }
 
@@ -36,18 +30,18 @@ export async function saveGuestResponse(response: GuestResponse) {
   }
 }
 
-export const fetchWishes = async (): Promise<Wish[]> => {
+
+export async function fetchWishes(): Promise<GuestResponse[]> {
   const { data, error } = await supabase
     .from('guests')
-    .select('name, guess, wish, created_at')
+    .select('name, guess, looks_like, loves_most, baby_nickname, created_at, wish')
     .not('wish', 'is', null)
     .neq('wish', '')
-    .order('created_at', { ascending: false })
 
   if (error) {
-    console.error('Error fetching wishes:', error)
+    console.error('Error fetching guest insights:', error)
     throw error
   }
 
-  return data ?? []
+  return (data ?? []) as GuestResponse[]
 }
