@@ -1,13 +1,12 @@
-
-import { useEffect, useRef } from 'react'
-import { Heart, Stars, Sparkles } from 'lucide-react'
-import { playRevealSound } from '../services/soundService'
+import {useEffect, useRef} from 'react'
+import {Heart, Stars, Sparkles} from 'lucide-react'
+import {playRevealSound} from '../services/soundService'
 
 type Props = {
   onContinue: () => void
 }
 
-export default function Reveal({ onContinue }: Props) {
+export default function Reveal({onContinue}: Props) {
   const soundPlayed = useRef(false)
 
   useEffect(() => {
@@ -51,13 +50,9 @@ export default function Reveal({ onContinue }: Props) {
 
         <div className="mx-auto my-6 flex h-48 w-48 items-center justify-center rounded-full border-4 border-pink-300 bg-white/80 shadow-2xl shadow-pink-200 sm:h-56 sm:w-56">
           <div>
-            <div className="text-7xl sm:text-8xl">
-              🎁
-            </div>
+            <div className="text-7xl sm:text-8xl">🎁</div>
 
-            <p className="mt-3 text-xl font-black text-pink-600">
-              SURPRISE!
-            </p>
+            <p className="mt-3 text-xl font-black text-pink-600">SURPRISE!</p>
           </div>
         </div>
 
@@ -77,6 +72,14 @@ export default function Reveal({ onContinue }: Props) {
             Until then, let's fill this beautiful journey with love!
           </p>
 
+          <button
+            type="button"
+            onClick={onContinue}
+            className="mt-6 w-full rounded-full bg-gradient-to-r from-pink-500 to-purple-600 px-5 py-3 font-bold text-white shadow-lg transition hover:scale-[1.02]"
+          >
+            Leave a little wish 💌
+          </button>
+
           <p className="mt-2 text-sm leading-relaxed text-[#625761]">
             Send a little wish for our precious baby. Your love and blessings
             will make this journey even more special. 💌
@@ -88,14 +91,6 @@ export default function Reveal({ onContinue }: Props) {
           Loved beyond words
           <Heart size={17} fill="currentColor" />
         </div>
-
-        <button
-          type="button"
-          onClick={onContinue}
-          className="mt-6 w-full rounded-full bg-gradient-to-r from-pink-500 to-purple-600 px-5 py-3 font-bold text-white shadow-lg transition hover:scale-[1.02]"
-        >
-          Leave a little wish 💌
-        </button>
 
         <p className="mt-4 text-xs text-[#81727D]">
           With love, Dilki & Asinthaka ❤️
