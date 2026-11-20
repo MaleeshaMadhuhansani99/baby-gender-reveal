@@ -95,7 +95,6 @@ function App() {
     if (page === 'reveal') {
       return (
         <Reveal
-          gender={babyGender}
           onContinue={() => setPage('wish')}
         />
       )

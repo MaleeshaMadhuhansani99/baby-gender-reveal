@@ -4,7 +4,8 @@ import { Heart, Send, Sparkles } from 'lucide-react'
 import { saveGuestResponse } from '../services/guestService'
 import { playSuccessSound } from '../services/soundService'
 import type { BabyAnswers } from './BabyQuestions'
-import type { BabyGender } from './Reveal'
+
+export type BabyGender = 'girl' | 'boy'
 
 type Props = {
   name: string

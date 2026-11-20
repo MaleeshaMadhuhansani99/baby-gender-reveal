@@ -1,17 +1,13 @@
 
 import { useEffect, useRef } from 'react'
-import { Heart, Stars } from 'lucide-react'
+import { Heart, Stars, Sparkles } from 'lucide-react'
 import { playRevealSound } from '../services/soundService'
 
-export type BabyGender = 'girl' | 'boy'
-
 type Props = {
-  gender: BabyGender
   onContinue: () => void
 }
 
-export default function Reveal({ gender, onContinue }: Props) {
-  const isGirl = gender === 'girl'
+export default function Reveal({ onContinue }: Props) {
   const soundPlayed = useRef(false)
 
   useEffect(() => {
@@ -22,69 +18,70 @@ export default function Reveal({ gender, onContinue }: Props) {
   }, [])
 
   return (
-    <main
-      className={`relative flex h-[100svh] items-center justify-center overflow-hidden px-5 py-4 text-center ${
-        isGirl
-          ? 'bg-gradient-to-br from-pink-100 via-[#FFF8F5] to-rose-200'
-          : 'bg-gradient-to-br from-sky-100 via-[#FFF8F5] to-blue-200'
-      }`}
-    >
+    <main className="relative flex h-[100svh] items-center justify-center overflow-y-auto bg-gradient-to-br from-pink-100 via-[#FFF8F5] to-purple-200 px-5 py-6 text-center">
       <div className="pointer-events-none absolute left-5 top-8 animate-bounce text-3xl sparkle sparkle-one">
         ✨
       </div>
+
       <div className="pointer-events-none absolute right-6 top-16 animate-pulse text-3xl">
         💕
       </div>
+
       <div className="pointer-events-none absolute bottom-12 left-8 animate-pulse text-3xl">
         🎉
       </div>
+
       <div className="pointer-events-none absolute bottom-16 right-8 animate-bounce text-3xl">
         ⭐
       </div>
 
       <section className="relative w-full max-w-md">
         <Stars
-          className={`mx-auto mb-3 sparkle sparkle-one ${
-            isGirl ? 'text-pink-500' : 'text-blue-500'
-          }`}
+          className="mx-auto mb-3 sparkle sparkle-one text-pink-500"
           size={36}
         />
+
         <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#625761]">
           A little miracle is on the way
         </p>
 
         <h1 className="mt-4 text-4xl font-black text-[#720C7D] sm:text-5xl">
-          It's a...
+          Oops! Not just yet! 💕
         </h1>
 
-        <div
-          className={`mx-auto my-5 flex h-48 w-48 items-center justify-center rounded-full border-4 bg-white/80 shadow-2xl sm:h-56 sm:w-56 ${
-            isGirl
-              ? 'border-pink-300 shadow-pink-200'
-              : 'border-blue-300 shadow-blue-200'
-          }`}
-        >
+        <div className="mx-auto my-6 flex h-48 w-48 items-center justify-center rounded-full border-4 border-pink-300 bg-white/80 shadow-2xl shadow-pink-200 sm:h-56 sm:w-56">
           <div>
-            <div className="text-6xl sm:text-7xl">
-              {isGirl ? '🎀' : '🧸'}
+            <div className="text-7xl sm:text-8xl">
+              🎁
             </div>
-            <p
-              className={`mt-3 text-3xl font-black sm:text-4xl ${
-                isGirl ? 'text-pink-600' : 'text-blue-600'
-              }`}
-            >
-              {isGirl ? 'GIRL!' : 'BOY!'}
+
+            <p className="mt-3 text-xl font-black text-pink-600">
+              SURPRISE!
             </p>
           </div>
         </div>
 
         <h2 className="text-2xl font-black text-[#720C7D]">
-          {isGirl ? 'A little princess!' : 'A little prince!'} 💖
+          The big reveal is still a secret! 🤫
         </h2>
-        <p className="mx-auto mt-2 max-w-xs text-sm leading-relaxed text-[#625761]">
-          The sweetest new chapter is beginning for Dilki & Asinthaka.
-          So much love is waiting for this little one!
+
+        <p className="mx-auto mt-3 max-w-sm text-sm leading-relaxed text-[#625761]">
+          It's not time to reveal the gender just yet. Wait for the big reveal
+          to discover whether it's a little prince or princess!
         </p>
+
+        <div className="mt-5 rounded-2xl border border-pink-100 bg-white/70 p-4">
+          <Sparkles className="mx-auto mb-2 text-pink-500" size={24} />
+
+          <p className="text-sm font-semibold leading-relaxed text-[#720C7D]">
+            Until then, let's fill this beautiful journey with love!
+          </p>
+
+          <p className="mt-2 text-sm leading-relaxed text-[#625761]">
+            Send a little wish for our precious baby. Your love and blessings
+            will make this journey even more special. 💌
+          </p>
+        </div>
 
         <div className="mt-5 flex items-center justify-center gap-2 text-sm font-semibold text-[#720C7D]">
           <Heart size={17} fill="currentColor" />
@@ -95,14 +92,14 @@ export default function Reveal({ gender, onContinue }: Props) {
         <button
           type="button"
           onClick={onContinue}
-          className={`mt-6 w-full rounded-full px-5 py-3 font-bold text-white shadow-lg transition hover:scale-[1.02] ${
-            isGirl
-              ? 'bg-gradient-to-r from-pink-500 to-rose-500'
-              : 'bg-gradient-to-r from-sky-500 to-blue-600'
-          }`}
+          className="mt-6 w-full rounded-full bg-gradient-to-r from-pink-500 to-purple-600 px-5 py-3 font-bold text-white shadow-lg transition hover:scale-[1.02]"
         >
           Leave a little wish 💌
         </button>
+
+        <p className="mt-4 text-xs text-[#81727D]">
+          With love, Dilki & Asinthaka ❤️
+        </p>
       </section>
     </main>
   )
