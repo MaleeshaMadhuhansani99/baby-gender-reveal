@@ -1,7 +1,7 @@
 
 import { supabase } from '../lib/supabase'
 import type { BabyAnswers } from '../components/BabyQuestions'
-import type { BabyGender } from '../components/Reveal'
+import type { BabyGender } from '../components/WishForm'
 
 export type GuestResponse = {
   name: string

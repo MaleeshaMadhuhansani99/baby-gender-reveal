@@ -34,8 +34,6 @@ function App() {
   const [guess, setGuess] = useState<BabyGender>('girl')
   const [answers, setAnswers] = useState<BabyAnswers | null>(null)
 
-  const babyGender: BabyGender = 'boy'
-
   const openWishes = () => {
     window.location.hash = 'wishes'
     setPage('wishes')
