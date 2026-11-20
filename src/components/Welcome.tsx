@@ -94,9 +94,9 @@ export default function Welcome({onContinue}: WelcomeProps) {
 
           {/* Parents */}
           <div className="welcome-fade welcome-delay-1 mt-[clamp(0.7rem,2vh,1.25rem)] shrink-0">
-            <p className="text-[clamp(0.5rem,1.5vw,0.7rem)] font-bold uppercase tracking-[0.22em] text-[#7048e8]">
+            {/* <p className="text-[clamp(0.5rem,1.5vw,0.7rem)] font-bold uppercase tracking-[0.22em] text-[#7048e8]">
               A little one is on the way
-            </p>
+            </p> */}
 
             <h2 className="mt-1 font-serif text-[clamp(1.35rem,4vw,2rem)] font-bold leading-tight text-[#303b82]">
               Dilki <span className="text-[#e83e73]">&</span> Asinthaka
@@ -119,10 +119,10 @@ export default function Welcome({onContinue}: WelcomeProps) {
               is coming...
             </h1>
 
-            <p className="mx-auto mt-[clamp(0.6rem,1.5vh,1rem)] max-w-[min(90vw,28rem)] text-[clamp(0.65rem,1.8vw,0.95rem)] font-medium leading-[1.45] text-[#625761]">
+            {/* <p className="mx-auto mt-[clamp(0.6rem,1.5vh,1rem)] max-w-[min(90vw,28rem)] text-[clamp(0.65rem,1.8vw,0.95rem)] font-medium leading-[1.45] text-[#625761]">
               We have a tiny secret to share with you. But you’ll have to play
               along to discover it. 👀
-            </p>
+            </p> */}
           </div>
 
           {/* Baby */}
@@ -158,7 +158,7 @@ export default function Welcome({onContinue}: WelcomeProps) {
               className="cta-glow group flex min-h-[clamp(2.5rem,6vh,3.2rem)] items-center gap-2 rounded-full bg-[#e83e73] px-[clamp(1.1rem,4vw,2rem)] py-2 text-[clamp(0.7rem,1.7vw,0.9rem)] font-bold text-white transition duration-300 hover:-translate-y-1 hover:bg-[#d92f63] active:translate-y-0"
               onClick={onContinue}
             >
-              <span>Let’s find out</span>
+              <span>Let’s go</span>
 
               <span className="flex h-[clamp(1.35rem,4vh,1.75rem)] w-[clamp(1.35rem,4vh,1.75rem)] items-center justify-center rounded-full bg-white/20 transition-transform duration-300 group-hover:translate-x-1">
                 →
