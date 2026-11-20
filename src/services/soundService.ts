@@ -1,7 +1,6 @@
 
 let audioContext: AudioContext | null = null
 let musicTimer: number | null = null
-let soundEnabled = false
 let musicIndex = 0
 
 const melody = [
@@ -26,8 +25,6 @@ function playTone(
   type: OscillatorType = 'sine',
   delay = 0,
 ) {
-  if (!soundEnabled) return
-
   const context = getAudioContext()
   const startTime = context.currentTime + delay
 
@@ -51,13 +48,7 @@ function playTone(
   oscillator.stop(startTime + duration + 0.02)
 }
 
-export function isSoundEnabled() {
-  return soundEnabled
-}
-
-export async function enableSounds() {
-  soundEnabled = true
-
+export async function activateSounds() {
   const context = getAudioContext()
 
   if (context.state === 'suspended') {
@@ -67,23 +58,12 @@ export async function enableSounds() {
   startBackgroundMusic()
 }
 
-export function disableSounds() {
-  soundEnabled = false
-
-  if (musicTimer !== null) {
-    window.clearInterval(musicTimer)
-    musicTimer = null
-  }
-}
-
 export function startBackgroundMusic() {
-  if (!soundEnabled || musicTimer !== null) return
+  if (musicTimer !== null) return
 
   musicIndex = 0
 
   const playNextNote = () => {
-    if (!soundEnabled) return
-
     const note = melody[musicIndex % melody.length]
 
     playTone(note, 0.38, 0.035, 'sine')

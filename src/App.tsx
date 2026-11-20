@@ -12,7 +12,7 @@ import Reveal from './components/Reveal'
 import type { BabyGender } from './components/WishForm'
 import WishForm from './components/WishForm'
 import WishesWall from './components/WishesWall'
-import SoundControls from './components/SoundControl'
+import SoundEffects from './components/SoundEffects'
 
 type Page =
   | 'welcome'
@@ -116,7 +116,7 @@ function App() {
 
   return (
     <>
-      <SoundControls />
+      <SoundEffects />
       {renderPage()}
     </>
   )
