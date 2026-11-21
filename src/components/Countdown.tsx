@@ -41,7 +41,7 @@ export default function Countdown({ onComplete, onBack }: Props) {
   }, [count, onComplete])
 
   return (
-    <main className="relative flex h-[100svh] items-center justify-center overflow-hidden bg-[#FFF8F5] px-5 text-center">
+    <main className="relative flex h-[100dvh] min-h-[100svh] items-center justify-center overflow-x-hidden overflow-y-hidden overscroll-contain bg-[#FFF8F5] px-5 py-8 text-center">
       <BackButton onClick={onBack} />
       <Star
         aria-hidden="true"
@@ -85,7 +85,7 @@ export default function Countdown({ onComplete, onBack }: Props) {
         aria-hidden="true"
         className="sparkle pointer-events-none left-[48%] top-[12%] h-5 w-5 text-purple-300 sm:h-6 sm:w-6"
       />
-      <section className="relative z-10">
+      <section className="relative z-10 my-auto">
         <Sparkles className="mx-auto mb-5 text-purple-500" size={36} />
 
         <p className="text-xl font-bold uppercase tracking-[0.2em] text-pink-600">
