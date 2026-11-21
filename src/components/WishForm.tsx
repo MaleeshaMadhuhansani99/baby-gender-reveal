@@ -19,6 +19,58 @@ type Props = {
   onWishChange?: (wish: string) => void
 }
 
+function BackgroundDecorations() {
+  return (
+    <>
+      <div className="pointer-events-none absolute -left-24 -top-24 h-[35vh] w-[35vh] rounded-full bg-[#ff6b8a]/15 blur-3xl" />
+      <div className="pointer-events-none absolute -right-24 top-[8%] h-[40vh] w-[40vh] rounded-full bg-[#7048e8]/12 blur-3xl" />
+      <div className="pointer-events-none absolute bottom-[-18vh] left-1/2 h-[42vh] w-[42vh] -translate-x-1/2 rounded-full bg-[#ffb347]/15 blur-3xl" />
+
+      <div className="butterfly butterfly-one">
+        <span className="butterfly-wing butterfly-wing-left" />
+        <span className="butterfly-body" />
+        <span className="butterfly-wing butterfly-wing-right" />
+      </div>
+      <div className="butterfly butterfly-two">
+        <span className="butterfly-wing butterfly-wing-left" />
+        <span className="butterfly-body" />
+        <span className="butterfly-wing butterfly-wing-right" />
+      </div>
+      <div className="butterfly butterfly-three">
+        <span className="butterfly-wing butterfly-wing-left" />
+        <span className="butterfly-body" />
+        <span className="butterfly-wing butterfly-wing-right" />
+      </div>
+      <div className="butterfly butterfly-four">
+        <span className="butterfly-wing butterfly-wing-left" />
+        <span className="butterfly-body" />
+        <span className="butterfly-wing butterfly-wing-right" />
+      </div>
+      <div className="butterfly butterfly-five">
+        <span className="butterfly-wing butterfly-wing-left" />
+        <span className="butterfly-body" />
+        <span className="butterfly-wing butterfly-wing-right" />
+      </div>
+
+      <div className="floating-heart heart-one">
+        <Heart size={20} fill="currentColor" />
+      </div>
+      <div className="floating-heart heart-two">
+        <Heart size={17} fill="currentColor" />
+      </div>
+      <div className="sparkle sparkle-one">
+        <Sparkles size={22} />
+      </div>
+      <div className="sparkle sparkle-two">
+        <Sparkles size={20} />
+      </div>
+      <div className="sparkle sparkle-three">
+        <Sparkles size={17} />
+      </div>
+    </>
+  )
+}
+
 export default function WishForm({
   name,
   guess,
@@ -67,9 +119,10 @@ export default function WishForm({
 
   if (saved) {
     return (
-      <main className="flex min-h-[100svh] items-center justify-center bg-[#FFF8F5] px-5 py-8 text-center">
+      <main className="relative flex min-h-[100svh] items-center justify-center overflow-hidden bg-[#FFF8F5] px-5 py-8 text-center">
+        <BackgroundDecorations />
         <BackButton onClick={onBack} />
-        <section className="w-full max-w-md rounded-3xl border border-pink-100 bg-white p-7 shadow-xl shadow-pink-100">
+        <section className="relative z-10 w-full max-w-md rounded-3xl border border-pink-100 bg-white/90 p-7 shadow-xl shadow-pink-100 backdrop-blur-sm">
           <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-pink-100 text-pink-600">
             <Heart size={42} fill="currentColor" />
           </div>
@@ -102,11 +155,12 @@ export default function WishForm({
   }
 
   return (
-    <main className="flex min-h-[100svh] items-center justify-center bg-[#FFF8F5] px-4 py-6 text-[#30252F]">
+    <main className="relative flex min-h-[100svh] items-center justify-center overflow-hidden bg-[#FFF8F5] px-4 py-6 text-[#30252F]">
+      <BackgroundDecorations />
       <BackButton onClick={onBack} />
       <form
         onSubmit={handleSubmit}
-        className="my-auto w-full max-w-md rounded-3xl border border-pink-100 bg-white p-5 shadow-xl shadow-pink-100/60 sm:p-6"
+        className="relative z-10 my-auto w-full max-w-md rounded-3xl border border-pink-100 bg-white/90 p-5 shadow-xl shadow-pink-100/60 backdrop-blur-sm sm:p-6"
       >
         <div className="mx-auto mb-3 flex h-14 w-14 items-center justify-center rounded-full bg-pink-100 text-pink-600">
           <Heart size={30} fill="currentColor" />

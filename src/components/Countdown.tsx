@@ -88,7 +88,7 @@ export default function Countdown({ onComplete, onBack }: Props) {
       <section className="relative z-10">
         <Sparkles className="mx-auto mb-5 text-purple-500" size={36} />
 
-        <p className="text-xs font-bold uppercase tracking-[0.2em] text-pink-600">
+        <p className="text-xl font-bold uppercase tracking-[0.2em] text-pink-600">
           Girl or Boy? 💕
         </p>
 
