@@ -9,7 +9,7 @@ const si = {
   littleFun: 'පුංචි විනෝදයක්',
   cutestPredictions: 'ඔබේ ආදරණීය අනාවැකි කියන්න.',
 
-  looksLike: 'පුංචි පැටියා කා වගේ වෙයිද?',
+  looksLike: 'පුංචි පැටියා කවුරු වගේ වෙයිද?',
   looksLikeSubtitle: 'අම්මා වගේද? තාත්තා වගේද? 🥰',
 
   lovesMost: 'පුංචි පැටියා වැඩියෙන්ම කාට ආදරේ කරයිද?',
@@ -36,7 +36,7 @@ const si = {
   countdownTitle: 'දැනගන්න සූදානම්ද?',
   revealTitle: 'දැන්ම නෙවෙයි!',
   revealSecretTitle: 'ඒක තවම රහසක්!',
-  revealLeaveWish: 'පුංචි පවුල වෙනුවෙන් සුබ පැතුමක් ලියන්න',
+  revealLeaveWish: 'පුංචි පවුල වෙනුවෙන් සුබ පැතුමක් ලියන්න! 💖',
   wishSavedTitle: 'ඔබේ සුබ පැතුමට ස්තූතියි! 💖',
   wishFormTitle: 'පුංචි පැතුමක් ලියන්න 💌',
   viewAllWishes: 'අනිත් අයත් හිතන විදිය බලමු',

@@ -1,11 +1,10 @@
 
 import { supabase } from '../lib/supabase'
 import type { BabyAnswers } from '../components/BabyQuestions'
-import type { BabyGender } from '../components/WishForm'
 
 export type GuestResponse = {
   name: string
-  guess: BabyGender
+  guess: string
   baby_call_name: string
   looks_like: BabyAnswers['looks_like']
   loves_most: BabyAnswers['loves_most']
