@@ -138,7 +138,7 @@ export default function GuestName({ onContinue, onBack, initialName = '' }: Gues
               <span className="input-heart">♡</span>
             </div>
 
-            <p className="mt-2 px-2 text-left text-[10px] text-[#a0929b] sm:text-xs">
+            <p className="mt-2 px-2 text-center text-[10px] text-[#a0929b] sm:text-xs">
               Just a little name so we know who made the prediction ✨
             </p>
           </div>

@@ -117,7 +117,7 @@ export default function BabyCallName({ onContinue, onBack, initialName = '' }: P
               />
               <span className="input-heart">♡</span>
             </div>
-            <p className="mt-2 px-2 text-left text-[10px] text-[#a0929b] sm:text-xs">
+            <p className="mt-2 px-2 text-center text-[10px] text-[#a0929b] sm:text-xs">
               Choose the sweet name your little one will use ✨
             </p>
           </div>
@@ -144,9 +144,6 @@ export default function BabyCallName({ onContinue, onBack, initialName = '' }: P
             </button>
           </div>
 
-          <p className="animate-page-fade-up-delay-3 mt-4 text-[10px] tracking-wide text-[#a0929b] sm:text-xs">
-            I can't wait to meet you! 💕
-          </p>
         </div>
       </section>
     </main>
