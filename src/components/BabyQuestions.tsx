@@ -411,7 +411,7 @@ export default function BabyQuestions({
           .wizard-content,
           .wizard-option {
             animation-duration: 1s !important;
-            animation-delay: 0.5s !important;
+            animation-delay: 1s !important;
           }
         }
       `}</style>
