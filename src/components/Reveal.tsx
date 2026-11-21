@@ -132,7 +132,7 @@ export default function Reveal({onContinue, onBack}: Props) {
         </div>
 
         <p className="mt-4 text-xs text-[#81727D]">
-          With love, Dilki & Asinthaka ❤️
+          With love, Asinthaka & Dilki ❤️
         </p>
       </section>
     </main>

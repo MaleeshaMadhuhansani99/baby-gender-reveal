@@ -104,7 +104,7 @@ export default function Welcome({onContinue, onViewWishes}: WelcomeProps) {
             </p> */}
 
             <h2 className="mt-1 font-serif text-[clamp(1.35rem,4vw,2rem)] font-bold leading-tight text-[#303b82]">
-              Dilki <span className="text-[#e83e73]">&</span> Asinthaka
+              Asinthaka <span className="text-[#e83e73]">&</span> Dilki 
             </h2>
 
             <p className="mt-0.5 text-[clamp(0.62rem,1.7vw,0.85rem)] font-medium text-[#81727d]">
