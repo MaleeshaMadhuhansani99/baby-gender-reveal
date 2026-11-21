@@ -73,8 +73,35 @@ export default function WishesWall({onBack}: WishesWallProps) {
     totalGuesses > 0 ? Math.round((girlCount / totalGuesses) * 100) : 0
 
   return (
-    <main className="h-[100dvh] w-full overflow-y-auto overscroll-contain bg-[#FFF8F5] px-5 py-10">
-      <div className="mx-auto w-full max-w-6xl">
+    <main className="relative h-[100dvh] w-full overflow-y-auto overscroll-contain bg-[#FFF8F5] px-5 py-10">
+      {/* Flying butterflies */}
+      <div className="butterfly butterfly-one">
+        <span className="butterfly-wing butterfly-wing-left" />
+        <span className="butterfly-body" />
+        <span className="butterfly-wing butterfly-wing-right" />
+      </div>
+      <div className="butterfly butterfly-two">
+        <span className="butterfly-wing butterfly-wing-left" />
+        <span className="butterfly-body" />
+        <span className="butterfly-wing butterfly-wing-right" />
+      </div>
+      <div className="butterfly butterfly-three">
+        <span className="butterfly-wing butterfly-wing-left" />
+        <span className="butterfly-body" />
+        <span className="butterfly-wing butterfly-wing-right" />
+      </div>
+      <div className="butterfly butterfly-four">
+        <span className="butterfly-wing butterfly-wing-left" />
+        <span className="butterfly-body" />
+        <span className="butterfly-wing butterfly-wing-right" />
+      </div>
+      <div className="butterfly butterfly-five">
+        <span className="butterfly-wing butterfly-wing-left" />
+        <span className="butterfly-body" />
+        <span className="butterfly-wing butterfly-wing-right" />
+      </div>
+
+      <div className="relative z-10 mx-auto w-full max-w-6xl">
         {/* Back button */}
         <button
           onClick={onBack}

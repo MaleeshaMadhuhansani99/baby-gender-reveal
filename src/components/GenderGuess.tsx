@@ -259,7 +259,7 @@ export default function GenderGuess({ onContinue, onBack, initialGuess = null }:
               }`}
             >
               <span>
-                {selected ? 'Let’s see what happens' : 'Choose your team'}
+                {selected ? 'Next' : 'Choose your team'}
               </span>
 
               <ArrowRight

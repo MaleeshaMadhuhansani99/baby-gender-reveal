@@ -28,6 +28,33 @@ export default function BabyCallName({ onContinue, onBack, initialName = '' }: P
       <div className="pointer-events-none absolute -right-24 top-[8%] h-[40vh] w-[40vh] rounded-full bg-[#7048e8]/12 blur-3xl animate-soft-glow-delay" />
       <div className="pointer-events-none absolute bottom-[-18vh] left-1/2 h-[42vh] w-[42vh] -translate-x-1/2 rounded-full bg-[#ffb347]/15 blur-3xl animate-soft-glow-delay-2" />
 
+      {/* Flying butterflies */}
+      <div className="butterfly butterfly-one">
+        <span className="butterfly-wing butterfly-wing-left" />
+        <span className="butterfly-body" />
+        <span className="butterfly-wing butterfly-wing-right" />
+      </div>
+      <div className="butterfly butterfly-two">
+        <span className="butterfly-wing butterfly-wing-left" />
+        <span className="butterfly-body" />
+        <span className="butterfly-wing butterfly-wing-right" />
+      </div>
+      <div className="butterfly butterfly-three">
+        <span className="butterfly-wing butterfly-wing-left" />
+        <span className="butterfly-body" />
+        <span className="butterfly-wing butterfly-wing-right" />
+      </div>
+      <div className="butterfly butterfly-four">
+        <span className="butterfly-wing butterfly-wing-left" />
+        <span className="butterfly-body" />
+        <span className="butterfly-wing butterfly-wing-right" />
+      </div>
+      <div className="butterfly butterfly-five">
+        <span className="butterfly-wing butterfly-wing-left" />
+        <span className="butterfly-body" />
+        <span className="butterfly-wing butterfly-wing-right" />
+      </div>
+
       {/* Floating decorations */}
       <div className="pointer-events-none absolute left-[9%] top-[20%] animate-float-slow opacity-60">
         <Heart size={18} fill="#ff6b8a" strokeWidth={1.5} className="text-[#ff6b8a]" />

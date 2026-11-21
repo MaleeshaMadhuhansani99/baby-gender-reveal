@@ -94,7 +94,7 @@ export default function WishForm({
             onClick={onViewWishes}
             className="mt-7 w-full rounded-full bg-gradient-to-r from-pink-500 to-purple-600 px-8 py-3 font-semibold text-white shadow-lg transition hover:scale-105"
           >
-            💌 View All Wishes
+            💌 View All Wishes and predictions
           </button>
         </section>
       </main>

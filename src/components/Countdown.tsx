@@ -47,7 +47,7 @@ export default function Countdown({ onComplete, onBack }: Props) {
         <Sparkles className="mx-auto mb-5 text-purple-500" size={36} />
 
         <p className="text-xs font-bold uppercase tracking-[0.2em] text-pink-600">
-          The moment is here
+          Girl or Boy? 💕
         </p>
 
         <h1 className="mt-3 text-3xl font-black text-[#720C7D]">

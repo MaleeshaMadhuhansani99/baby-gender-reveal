@@ -82,11 +82,11 @@ export default function Reveal({onContinue, onBack}: Props) {
           >
             Leave a little wish 💌
           </button>
-
+{/* 
           <p className="mt-2 text-sm leading-relaxed text-[#625761]">
             Send a little wish for our precious baby. Your love and blessings
             will make this journey even more special. 💌
-          </p>
+          </p> */}
         </div>
 
         <div className="mt-5 flex items-center justify-center gap-2 text-sm font-semibold text-[#720C7D]">

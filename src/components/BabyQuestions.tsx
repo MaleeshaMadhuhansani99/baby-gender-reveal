@@ -18,7 +18,7 @@ type Props = {
 const choices = [
   { value: 'mommy', label: 'Mommy 💗', emoji: '👩🏻' },
   { value: 'daddy', label: 'Daddy 💙', emoji: '👨🏻' },
-  { value: 'both', label: 'Both 💕', emoji: '👨‍👩‍👧' },
+  // { value: 'both', label: 'Both 💕', emoji: '👨‍👩‍👧' },
 ] as const
 
 const questions = [
@@ -138,7 +138,7 @@ export default function BabyQuestions({ onContinue, onBack, initialAnswers }: Pr
 
           {/* Question 1 */}
           {step === 0 && (
-            <div className="grid grid-cols-3 gap-2">
+            <div className="grid grid-cols-2 gap-4">
               {choices.map((choice) => (
                 <button
                   key={choice.value}
@@ -164,7 +164,7 @@ export default function BabyQuestions({ onContinue, onBack, initialAnswers }: Pr
 
           {/* Question 2 */}
           {step === 1 && (
-            <div className="grid grid-cols-3 gap-2">
+            <div className="grid grid-cols-2 gap-4">
               {choices.map((choice) => (
                 <button
                   key={choice.value}
