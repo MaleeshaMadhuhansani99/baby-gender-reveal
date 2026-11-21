@@ -1,12 +1,14 @@
 
 import { useState } from 'react'
 import { ArrowRight, Baby, Heart, Sparkles, Star } from 'lucide-react'
+import BackButton from './BackButton'
 
 interface GuestNameProps {
   onContinue: (name: string) => void
+  onBack: () => void
 }
 
-export default function GuestName({ onContinue }: GuestNameProps) {
+export default function GuestName({ onContinue, onBack }: GuestNameProps) {
   const [name, setName] = useState('')
 
   const handleContinue = () => {
@@ -19,6 +21,7 @@ export default function GuestName({ onContinue }: GuestNameProps) {
 
   return (
     <main className="relative h-[100svh] w-full overflow-hidden bg-[#fff8f5] text-[#30252f]">
+      <BackButton onClick={onBack} />
       {/* Soft background glows */}
       <div className="pointer-events-none absolute -left-24 -top-24 h-[35vh] w-[35vh] rounded-full bg-[#ff6b8a]/15 blur-3xl animate-soft-glow" />
 
@@ -170,4 +173,3 @@ export default function GuestName({ onContinue }: GuestNameProps) {
     </main>
   )
 }
-

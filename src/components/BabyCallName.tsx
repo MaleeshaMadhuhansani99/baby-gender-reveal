@@ -1,12 +1,14 @@
 
 import { useState } from 'react'
 import { Heart, Baby, ArrowRight, Sparkles } from 'lucide-react'
+import BackButton from './BackButton'
 
 type Props = {
   onContinue: (babyCallName: string) => void
+  onBack: () => void
 }
 
-export default function BabyCallName({ onContinue }: Props) {
+export default function BabyCallName({ onContinue, onBack }: Props) {
   const [babyCallName, setBabyCallName] = useState('')
 
   const handleContinue = () => {
@@ -19,6 +21,7 @@ export default function BabyCallName({ onContinue }: Props) {
 
   return (
     <main className="relative h-[100svh] w-full overflow-hidden bg-[#fff8f5] text-[#30252f]">
+      <BackButton onClick={onBack} />
       {/* Soft background glows */}
       <div className="pointer-events-none absolute -left-24 -top-24 h-[35vh] w-[35vh] rounded-full bg-[#ff6b8a]/15 blur-3xl animate-soft-glow" />
       <div className="pointer-events-none absolute -right-24 top-[8%] h-[40vh] w-[40vh] rounded-full bg-[#7048e8]/12 blur-3xl animate-soft-glow-delay" />

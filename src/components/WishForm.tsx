@@ -4,6 +4,7 @@ import { Heart, Send, Sparkles } from 'lucide-react'
 import { saveGuestResponse } from '../services/guestService'
 import { playSuccessSound } from '../services/soundService'
 import type { BabyAnswers } from './BabyQuestions'
+import BackButton from './BackButton'
 
 export type BabyGender = 'girl' | 'boy'
 
@@ -13,6 +14,7 @@ type Props = {
   guess: BabyGender
   answers: BabyAnswers
   onViewWishes: () => void
+  onBack: () => void
 }
 
 export default function WishForm({
@@ -21,6 +23,7 @@ export default function WishForm({
   babyCallName,
   answers,
   onViewWishes,
+  onBack,
 }: Props) {
   const [wish, setWish] = useState('')
   const [loading, setLoading] = useState(false)
@@ -61,6 +64,7 @@ export default function WishForm({
   if (saved) {
     return (
       <main className="flex min-h-[100svh] items-center justify-center bg-[#FFF8F5] px-5 py-8 text-center">
+        <BackButton onClick={onBack} />
         <section className="w-full max-w-md rounded-3xl border border-pink-100 bg-white p-7 shadow-xl shadow-pink-100">
           <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-pink-100 text-pink-600">
             <Heart size={42} fill="currentColor" />
@@ -95,6 +99,7 @@ export default function WishForm({
 
   return (
     <main className="flex min-h-[100svh] items-center justify-center bg-[#FFF8F5] px-4 py-6 text-[#30252F]">
+      <BackButton onClick={onBack} />
       <form
         onSubmit={handleSubmit}
         className="my-auto w-full max-w-md rounded-3xl border border-pink-100 bg-white p-5 shadow-xl shadow-pink-100/60 sm:p-6"

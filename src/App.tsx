@@ -43,7 +43,7 @@ function App() {
 
   const closeWishes = () => {
     window.location.hash = ''
-    setPage('welcome')
+    setPage(answers ? 'wish' : 'welcome')
   }
 
   const renderPage = () => {
@@ -54,6 +54,7 @@ function App() {
     if (page === 'name') {
       return (
         <GuestName
+          onBack={() => setPage('welcome')}
           onContinue={(name) => {
             setGuestName(name.trim())
             setPage('baby-call-name')
@@ -65,6 +66,7 @@ function App() {
     if (page === 'baby-call-name') {
       return (
         <BabyCallName
+          onBack={() => setPage('name')}
           onContinue={(value) => {
             setBabyCallName(value)
             setPage('guess')
@@ -76,6 +78,7 @@ function App() {
     if (page === 'guess') {
       return (
         <GenderGuess
+          onBack={() => setPage('baby-call-name')}
           onContinue={(selectedGuess) => {
             setGuess(selectedGuess)
             setPage('questions')
@@ -87,6 +90,7 @@ function App() {
     if (page === 'questions') {
       return (
         <BabyQuestions
+          onBack={() => setPage('guess')}
           onContinue={(babyAnswers) => {
             setAnswers(babyAnswers)
             setPage('countdown')
@@ -100,11 +104,21 @@ function App() {
     // }
 
     if (page === 'countdown') {
-      return <Countdown onComplete={() => setPage('reveal')} />
+      return (
+        <Countdown
+          onBack={() => setPage('questions')}
+          onComplete={() => setPage('reveal')}
+        />
+      )
     }
 
     if (page === 'reveal') {
-      return <Reveal onContinue={() => setPage('wish')} />
+      return (
+        <Reveal
+          onBack={() => setPage('countdown')}
+          onContinue={() => setPage('wish')}
+        />
+      )
     }
 
     if (page === 'wish' && answers) {
@@ -115,6 +129,7 @@ function App() {
           guess={guess}
           answers={answers}
           onViewWishes={openWishes}
+          onBack={() => setPage('reveal')}
         />
       )
     }

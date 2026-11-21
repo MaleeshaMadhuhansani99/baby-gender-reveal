@@ -7,14 +7,16 @@ import {
   ArrowRight,
   Baby,
 } from 'lucide-react'
+import BackButton from './BackButton'
 
 interface GenderGuessProps {
   onContinue: (guess: 'girl' | 'boy') => void
+  onBack: () => void
 }
 
 type Guess = 'girl' | 'boy'
 
-export default function GenderGuess({ onContinue }: GenderGuessProps) {
+export default function GenderGuess({ onContinue, onBack }: GenderGuessProps) {
   const [selected, setSelected] = useState<Guess | null>(null)
 
   const handleSelect = (guess: Guess) => {
@@ -23,6 +25,7 @@ export default function GenderGuess({ onContinue }: GenderGuessProps) {
 
   return (
     <main className="relative h-[100svh] w-full overflow-hidden bg-[#fff8f5] text-[#30252f]">
+      <BackButton onClick={onBack} />
       {/* Soft background glow */}
       <div className="pointer-events-none absolute -left-24 -top-24 h-[35vh] w-[35vh] rounded-full bg-[#ff6b8a]/15 blur-3xl animate-soft-glow" />
 

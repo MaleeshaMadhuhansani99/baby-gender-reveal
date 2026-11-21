@@ -1,12 +1,14 @@
 import {useEffect, useRef} from 'react'
 import {Heart, Stars, Sparkles} from 'lucide-react'
 import {playRevealSound} from '../services/soundService'
+import BackButton from './BackButton'
 
 type Props = {
   onContinue: () => void
+  onBack: () => void
 }
 
-export default function Reveal({onContinue}: Props) {
+export default function Reveal({onContinue, onBack}: Props) {
   const soundPlayed = useRef(false)
 
   useEffect(() => {
@@ -18,6 +20,7 @@ export default function Reveal({onContinue}: Props) {
 
   return (
     <main className="relative flex h-[100svh] items-center justify-center overflow-y-auto bg-gradient-to-br from-pink-100 via-[#FFF8F5] to-purple-200 px-5 py-6 text-center">
+      <BackButton onClick={onBack} />
       <div className="pointer-events-none absolute left-5 top-8 animate-bounce text-3xl sparkle sparkle-one">
         ✨
       </div>

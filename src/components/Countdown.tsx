@@ -2,12 +2,14 @@
 import { useEffect, useState } from 'react'
 import { Sparkles } from 'lucide-react'
 import { playCountdownSound } from '../services/soundService'
+import BackButton from './BackButton'
 
 type Props = {
   onComplete: () => void
+  onBack: () => void
 }
 
-export default function Countdown({ onComplete }: Props) {
+export default function Countdown({ onComplete, onBack }: Props) {
   const [count, setCount] = useState(3)
 
   useEffect(() => {
@@ -40,6 +42,7 @@ export default function Countdown({ onComplete }: Props) {
 
   return (
     <main className="flex h-[100svh] items-center justify-center overflow-hidden bg-[#FFF8F5] px-5 text-center">
+      <BackButton onClick={onBack} />
       <section>
         <Sparkles className="mx-auto mb-5 text-purple-500" size={36} />
 

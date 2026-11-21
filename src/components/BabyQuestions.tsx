@@ -1,6 +1,7 @@
 
 import { useState } from 'react'
 import { Heart, Sparkles, ArrowLeft, ArrowRight } from 'lucide-react'
+import BackButton from './BackButton'
 
 export type BabyAnswers = {
   looks_like: 'mommy' | 'daddy' | 'both'
@@ -10,6 +11,7 @@ export type BabyAnswers = {
 
 type Props = {
   onContinue: (answers: BabyAnswers) => void
+  onBack: () => void
 }
 
 const choices = [
@@ -36,7 +38,7 @@ const questions = [
   },
 ]
 
-export default function BabyQuestions({ onContinue }: Props) {
+export default function BabyQuestions({ onContinue, onBack }: Props) {
   const [step, setStep] = useState(0)
 
   const [looksLike, setLooksLike] =
@@ -66,6 +68,8 @@ export default function BabyQuestions({ onContinue }: Props) {
   const handleBack = () => {
     if (step > 0) {
       setStep((current) => current - 1)
+    } else {
+      onBack()
     }
   }
 
@@ -73,6 +77,7 @@ export default function BabyQuestions({ onContinue }: Props) {
 
   return (
     <main className="relative flex min-h-[100svh] items-center justify-center overflow-hidden bg-[#FFF8F5] px-4 py-6 text-[#30252F]">
+      <BackButton onClick={handleBack} />
 
       {/* Background decorations */}
       <div className="pointer-events-none absolute -left-16 top-10 h-40 w-40 rounded-full bg-pink-200/50 blur-3xl" />
