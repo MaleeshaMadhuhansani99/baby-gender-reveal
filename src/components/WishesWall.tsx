@@ -73,7 +73,7 @@ export default function WishesWall({onBack}: WishesWallProps) {
     totalGuesses > 0 ? Math.round((girlCount / totalGuesses) * 100) : 0
 
   return (
-    <main className="relative h-[100dvh] w-full overflow-y-auto overscroll-contain bg-[#FFF8F5] px-5 py-10">
+    <main className="relative h-[100dvh] w-full overflow-y-auto overflow-x-hidden overscroll-contain bg-[#FFF8F5] px-5 py-10">
       {/* Floating sparkles, stars, and flowers */}
       <div className="pointer-events-none absolute -left-20 top-[12%] h-40 w-40 rounded-full bg-pink-200/40 blur-3xl" />
       <div className="pointer-events-none absolute -right-20 top-[38%] h-44 w-44 rounded-full bg-purple-200/40 blur-3xl" />
