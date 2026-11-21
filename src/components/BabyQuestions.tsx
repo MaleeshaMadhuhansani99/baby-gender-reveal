@@ -1,6 +1,6 @@
 
 import { useState } from 'react'
-import { Heart, Sparkles, ArrowLeft, ArrowRight } from 'lucide-react'
+import { Sparkles, ArrowLeft, ArrowRight } from 'lucide-react'
 import BackButton from './BackButton'
 
 export type BabyAnswers = {
