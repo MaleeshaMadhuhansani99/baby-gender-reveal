@@ -5,6 +5,7 @@ import { saveGuestResponse } from '../services/guestService'
 import { playSuccessSound } from '../services/soundService'
 import type { BabyAnswers } from './BabyQuestions'
 import BackButton from './BackButton'
+import { useLanguage } from '../context/LanguageContext'
 
 export type BabyGender = 'girl' | 'boy'
 
@@ -81,6 +82,7 @@ export default function WishForm({
   initialWish = '',
   onWishChange,
 }: Props) {
+  const { t } = useLanguage()
   const [wish, setWish] = useState(initialWish)
   const [loading, setLoading] = useState(false)
   const [saved, setSaved] = useState(false)
@@ -128,7 +130,7 @@ export default function WishForm({
           </div>
 
           <h1 className="mt-5 text-3xl font-black text-[#720C7D]">
-            Your wish is saved! 💖
+            {t('wishSavedTitle')}
           </h1>
 
           <p className="mt-3 text-sm leading-relaxed text-[#625761]">
@@ -147,7 +149,7 @@ export default function WishForm({
             onClick={onViewWishes}
             className="mt-7 w-full rounded-full bg-gradient-to-r from-pink-500 to-purple-600 px-8 py-3 font-semibold text-white shadow-lg transition hover:scale-105"
           >
-            💌 View All Wishes and predictions
+            💌 {t('viewAllWishes')}
           </button>
         </section>
       </main>
@@ -171,7 +173,7 @@ export default function WishForm({
         </p>
 
         <h1 className="mt-2 text-center text-3xl font-black text-[#720C7D]">
-          Leave a little wish 💌
+          {t('wishFormTitle')}
         </h1>
 
         <p className="mt-2 text-center text-sm text-[#625761]">

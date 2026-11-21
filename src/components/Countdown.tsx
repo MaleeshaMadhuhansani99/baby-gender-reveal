@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 import { Sparkles, Star, Stars } from 'lucide-react'
 import { playCountdownSound } from '../services/soundService'
 import BackButton from './BackButton'
+import { useLanguage } from '../context/LanguageContext'
 
 type Props = {
   onComplete: () => void
@@ -10,6 +11,7 @@ type Props = {
 }
 
 export default function Countdown({ onComplete, onBack }: Props) {
+  const { t } = useLanguage()
   const [count, setCount] = useState(5)
 
   useEffect(() => {
@@ -93,7 +95,7 @@ export default function Countdown({ onComplete, onBack }: Props) {
         </p>
 
         <h1 className="mt-3 text-3xl font-black text-[#720C7D]">
-          Ready to find out?
+          {t('countdownTitle')}
         </h1>
 
         <div

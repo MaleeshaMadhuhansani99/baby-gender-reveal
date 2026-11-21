@@ -2,6 +2,7 @@
 import { useState } from 'react'
 import { ArrowRight, Baby, Heart, Sparkles, Star } from 'lucide-react'
 import BackButton from './BackButton'
+import { useLanguage } from '../context/LanguageContext'
 
 interface GuestNameProps {
   onContinue: (name: string) => void
@@ -10,6 +11,7 @@ interface GuestNameProps {
 }
 
 export default function GuestName({ onContinue, onBack, initialName = '' }: GuestNameProps) {
+  const { t, language } = useLanguage()
   const [name, setName] = useState(initialName)
 
   const handleContinue = () => {
@@ -93,11 +95,13 @@ export default function GuestName({ onContinue, onBack, initialName = '' }: Gues
             <h1
               className="font-serif font-bold tracking-tight text-[#720c7d]"
               style={{
-                fontSize: 'clamp(2rem, 7vw, 3.5rem)',
+                fontSize: language === 'si'
+                  ? 'clamp(1.7rem, 6vw, 3rem)'
+                  : 'clamp(2rem, 7vw, 3.5rem)',
                 lineHeight: 1.05,
               }}
             >
-              Tell us who you are! 💕
+              {t('guestNameTitle')}
             </h1>
 
             <p

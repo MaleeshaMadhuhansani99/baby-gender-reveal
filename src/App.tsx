@@ -14,6 +14,7 @@ import WishesWall from './components/WishesWall'
 import SoundEffects from './components/SoundEffects'
 import BabyCallName from './components/BabyCallName'
 import CreatorCredit from './components/CreatorCredit'
+import LanguageSwitcher from './components/LanguageSwitcher'
 
 type Page =
   | 'welcome'
@@ -148,6 +149,9 @@ function App() {
   return (
     <>
       <SoundEffects />
+      <div className="fixed right-3 top-3 z-50 sm:right-5 sm:top-5">
+        <LanguageSwitcher />
+      </div>
       {renderPage()}
       <CreatorCredit />
     </>

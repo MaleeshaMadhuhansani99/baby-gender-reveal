@@ -2,6 +2,7 @@
 import { useState } from 'react'
 import { Heart, Baby, ArrowRight, Sparkles } from 'lucide-react'
 import BackButton from './BackButton'
+import { useLanguage } from '../context/LanguageContext'
 
 type Props = {
   onContinue: (babyCallName: string) => void
@@ -10,6 +11,7 @@ type Props = {
 }
 
 export default function BabyCallName({ onContinue, onBack, initialName = '' }: Props) {
+  const { t, language } = useLanguage()
   const [babyCallName, setBabyCallName] = useState(initialName)
 
   const handleContinue = () => {
@@ -85,17 +87,21 @@ export default function BabyCallName({ onContinue, onBack, initialName = '' }: P
           <div className="animate-page-fade-up-delay-1">
             <h1
               className="font-serif font-bold tracking-tight text-[#720c7d]"
-              style={{ fontSize: 'clamp(2rem, 7vw, 3.5rem)', lineHeight: 1.05 }}
+              style={{
+                fontSize: language === 'si'
+                  ? 'clamp(1.7rem, 6vw, 3rem)'
+                  : 'clamp(2rem, 7vw, 3.5rem)',
+                lineHeight: 1.05,
+              }}
             >
-              What should Baby call you? 🥰
+              {t('babyCallNameTitle')}
             </h1>
             <p
               className="mx-auto mt-3 max-w-md px-3 text-[#625761]"
               style={{ fontSize: 'clamp(0.85rem, 2vw, 1rem)', lineHeight: 1.55 }}
             >
-              Are you Baby's Punchi, Aunty, Uncle,
-              <br />
-              Amma Achchi, Seeya or someone special?
+              Who will you be to our little one?
+    
             </p>
           </div>
 

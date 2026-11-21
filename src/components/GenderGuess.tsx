@@ -8,6 +8,7 @@ import {
   Baby,
 } from 'lucide-react'
 import BackButton from './BackButton'
+import { useLanguage } from '../context/LanguageContext'
 
 interface GenderGuessProps {
   onContinue: (guess: 'girl' | 'boy') => void
@@ -18,6 +19,7 @@ interface GenderGuessProps {
 type Guess = 'girl' | 'boy'
 
 export default function GenderGuess({ onContinue, onBack, initialGuess = null }: GenderGuessProps) {
+  const { t, language } = useLanguage()
   const [selected, setSelected] = useState<Guess | null>(initialGuess)
 
   const handleSelect = (guess: Guess) => {
@@ -103,11 +105,13 @@ export default function GenderGuess({ onContinue, onBack, initialGuess = null }:
             <h1
               className="font-serif font-bold tracking-tight text-[#720c7d]"
               style={{
-                fontSize: 'clamp(2rem, 6vw, 3.5rem)',
+                fontSize: language === 'si'
+                  ? 'clamp(1.8rem, 5.5vw, 3rem)'
+                  : 'clamp(2rem, 6vw, 3.5rem)',
                 lineHeight: 1.05,
               }}
             >
-              Make your prediction
+              {t('predictionTitle')}
             </h1>
 
             <p

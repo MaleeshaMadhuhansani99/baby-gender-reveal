@@ -1,9 +1,13 @@
 import {Heart, Sparkles, Stars} from 'lucide-react'
+import {useLanguage} from '../context/LanguageContext'
+
 interface WelcomeProps {
   onContinue: () => void
 }
 
 export default function Welcome({onContinue}: WelcomeProps) {
+  const {t, language} = useLanguage()
+
   return (
     <main className="relative h-[100svh] w-full overflow-hidden bg-[#fff8f5] text-[#30252f]">
       {/* Background glow */}
@@ -113,10 +117,20 @@ export default function Welcome({onContinue}: WelcomeProps) {
               Baby on the way
             </p>
 
-            <h1 className="font-serif text-[clamp(2rem,7.5vw,4rem)] font-bold leading-[0.92] tracking-tight text-[#720c7d]">
-              Someone very
-              <span className="block text-[#e83e73]">special</span>
-              is coming...
+            <h1 className={`font-serif font-bold leading-[1.05] tracking-tight text-[#720c7d] ${
+              language === 'si'
+                ? 'text-[clamp(1.7rem,6.5vw,3rem)]'
+                : 'text-[clamp(2rem,7.5vw,4rem)]'
+            }`}>
+              {language === 'en' ? (
+                <>
+                  Someone very
+                  <span className="block text-[#e83e73]">special</span>
+                  is coming...
+                </>
+              ) : (
+                t('welcomeTitle')
+              )}
             </h1>
 
             {/* <p className="mx-auto mt-[clamp(0.6rem,1.5vh,1rem)] max-w-[min(90vw,28rem)] text-[clamp(0.65rem,1.8vw,0.95rem)] font-medium leading-[1.45] text-[#625761]">

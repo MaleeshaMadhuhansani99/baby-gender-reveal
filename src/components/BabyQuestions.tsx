@@ -2,6 +2,7 @@
 import { useState } from 'react'
 import { Sparkles, ArrowLeft, ArrowRight } from 'lucide-react'
 import BackButton from './BackButton'
+import { useLanguage } from '../context/LanguageContext'
 
 export type BabyAnswers = {
   looks_like: 'mommy' | 'daddy' | 'both'
@@ -44,6 +45,7 @@ export default function BabyQuestions({
   onBack,
   initialAnswers,
 }: Props) {
+  const { t } = useLanguage()
   const [step, setStep] = useState(initialAnswers ? 2 : 0)
 
   const [looksLike, setLooksLike] =
@@ -132,7 +134,7 @@ export default function BabyQuestions({
           </p>
 
           <h1 className="wizard-header mt-2 text-2xl font-black text-[#720C7D] sm:text-3xl">
-            Let's talk about Baby! 🍼
+            {t('babyQuestions')} 🍼
           </h1>
 
           <p className="wizard-header mt-2 text-sm text-[#625761]">
@@ -168,7 +170,7 @@ export default function BabyQuestions({
           {/* Question heading */}
           <div className="wizard-content mb-6 text-center">
             <h2 className="text-xl font-black leading-snug text-[#720C7D]">
-              {currentQuestion.title}
+              {t((['looksLike', 'lovesMost', 'nickname'] as const)[step])}
             </h2>
 
             <p className="mt-2 text-sm text-[#81727D]">

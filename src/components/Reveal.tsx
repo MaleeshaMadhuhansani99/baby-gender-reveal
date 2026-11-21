@@ -2,6 +2,7 @@ import {useEffect, useRef} from 'react'
 import {Heart, Stars, Sparkles} from 'lucide-react'
 import {playRevealSound} from '../services/soundService'
 import BackButton from './BackButton'
+import { useLanguage } from '../context/LanguageContext'
 
 type Props = {
   onContinue: () => void
@@ -9,6 +10,7 @@ type Props = {
 }
 
 export default function Reveal({onContinue, onBack}: Props) {
+  const { t, language } = useLanguage()
   const soundPlayed = useRef(false)
 
   useEffect(() => {
@@ -78,19 +80,23 @@ export default function Reveal({onContinue, onBack}: Props) {
         </p> */}
 
         <h1 className="mt-4 text-2xl font-black text-[#720C7D] sm:text-2xl">
-          Oops! Not just yet!
+          {t('revealTitle')}
         </h1>
 
         <div className="mx-auto my-6 flex h-36 w-36 items-center justify-center rounded-full border-4 border-[#e83e73]/20 bg-gradient-to-br from-[#ffd6df] via-white to-[#dcd2ff] shadow-[0_15px_45px_rgba(232,62,115,0.20)] sm:h-42 sm:w-42">
           <div>
             <div className="text-5xl sm:text-6xl">👶</div>
 
-            <p className="mt-3 text-xl font-black text-[#e83e73]">SURPRISE!</p>
+            <p className="mt-3 text-xl font-black text-[#e83e73]">
+              SURPRISE!
+            </p>
           </div>
         </div>
 
-        <h2 className="text-2xl font-black text-[#720C7D]">
-          The big reveal is still a secret!
+        <h2 className={`font-black text-[#720C7D] ${
+          language === 'si' ? 'text-xl sm:text-2xl' : 'text-2xl'
+        }`}>
+          {t('revealSecretTitle')}
         </h2>
 
         <p className="mx-auto mt-3 max-w-sm text-sm leading-relaxed text-[#625761]">
@@ -110,7 +116,7 @@ export default function Reveal({onContinue, onBack}: Props) {
             onClick={onContinue}
             className="mt-6 w-full rounded-full bg-[#e83e73] px-5 py-3 font-bold text-white shadow-lg transition hover:scale-[1.02] hover:bg-[#d92f63]"
           >
-            Leave a little wish
+            {t('revealLeaveWish')}
           </button>
 {/* 
           <p className="mt-2 text-sm leading-relaxed text-[#625761]">
