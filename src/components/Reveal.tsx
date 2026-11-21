@@ -19,27 +19,57 @@ export default function Reveal({onContinue, onBack}: Props) {
   }, [])
 
   return (
-    <main className="relative flex h-[100svh] items-center justify-center overflow-y-auto bg-gradient-to-br from-pink-100 via-[#FFF8F5] to-purple-200 px-5 py-6 text-center">
+    <main className="relative flex h-[100svh] items-center justify-center overflow-y-auto bg-[#fff8f5] px-5 py-6 text-center text-[#30252f]">
       <BackButton onClick={onBack} />
-      <div className="pointer-events-none absolute left-5 top-8 animate-bounce text-3xl sparkle sparkle-one">
-        ✨
+      <div className="pointer-events-none absolute -left-24 -top-24 h-[35vh] w-[35vh] rounded-full bg-[#ff6b8a]/20 blur-3xl" />
+      <div className="pointer-events-none absolute -right-24 top-[8%] h-[40vh] w-[40vh] rounded-full bg-[#7048e8]/15 blur-3xl" />
+      <div className="pointer-events-none absolute bottom-[-15vh] left-1/2 h-[40vh] w-[40vh] -translate-x-1/2 rounded-full bg-[#ffb347]/20 blur-3xl" />
+
+      <div className="butterfly butterfly-one">
+        <span className="butterfly-wing butterfly-wing-left" />
+        <span className="butterfly-body" />
+        <span className="butterfly-wing butterfly-wing-right" />
+      </div>
+      <div className="butterfly butterfly-two">
+        <span className="butterfly-wing butterfly-wing-left" />
+        <span className="butterfly-body" />
+        <span className="butterfly-wing butterfly-wing-right" />
+      </div>
+      <div className="butterfly butterfly-three">
+        <span className="butterfly-wing butterfly-wing-left" />
+        <span className="butterfly-body" />
+        <span className="butterfly-wing butterfly-wing-right" />
+      </div>
+      <div className="butterfly butterfly-four">
+        <span className="butterfly-wing butterfly-wing-left" />
+        <span className="butterfly-body" />
+        <span className="butterfly-wing butterfly-wing-right" />
+      </div>
+      <div className="butterfly butterfly-five">
+        <span className="butterfly-wing butterfly-wing-left" />
+        <span className="butterfly-body" />
+        <span className="butterfly-wing butterfly-wing-right" />
       </div>
 
-      <div className="pointer-events-none absolute right-6 top-16 animate-pulse text-3xl">
-        💕
+      <div className="floating-heart heart-one">
+        <Heart size={20} fill="currentColor" />
+      </div>
+      <div className="floating-heart heart-two">
+        <Heart size={17} fill="currentColor" />
+      </div>
+      <div className="sparkle sparkle-one">
+        <Sparkles size={22} />
+      </div>
+      <div className="sparkle sparkle-two">
+        <Stars size={20} />
+      </div>
+      <div className="sparkle sparkle-three">
+        <Sparkles size={17} />
       </div>
 
-      <div className="pointer-events-none absolute bottom-12 left-8 animate-pulse text-3xl">
-        🎉
-      </div>
-
-      <div className="pointer-events-none absolute bottom-16 right-8 animate-bounce text-3xl">
-        ⭐
-      </div>
-
-      <section className="relative w-full max-w-md">
+      <section className="relative z-10 w-full max-w-md">
         <Stars
-          className="mx-auto mb-3 sparkle sparkle-one text-pink-500"
+          className="mx-auto mb-3 animate-twinkle text-[#e83e73]"
           size={36}
         />
 {/* 
@@ -48,19 +78,19 @@ export default function Reveal({onContinue, onBack}: Props) {
         </p> */}
 
         <h1 className="mt-4 text-2xl font-black text-[#720C7D] sm:text-2xl">
-          Oops! Not just yet! 💕
+          Oops! Not just yet!
         </h1>
 
-        <div className="mx-auto my-6 flex h-36 w-36 items-center justify-center rounded-full border-4 border-pink-300 bg-white/80 shadow-2xl shadow-pink-200 sm:h-42 sm:w-42">
+        <div className="mx-auto my-6 flex h-36 w-36 items-center justify-center rounded-full border-4 border-[#e83e73]/20 bg-gradient-to-br from-[#ffd6df] via-white to-[#dcd2ff] shadow-[0_15px_45px_rgba(232,62,115,0.20)] sm:h-42 sm:w-42">
           <div>
-            <div className="text-2xl sm:text-5xl">🎁</div>
+            <div className="text-5xl sm:text-6xl">👶</div>
 
-            <p className="mt-3 text-xl font-black text-pink-600">SURPRISE!</p>
+            <p className="mt-3 text-xl font-black text-[#e83e73]">SURPRISE!</p>
           </div>
         </div>
 
         <h2 className="text-2xl font-black text-[#720C7D]">
-          The big reveal is still a secret! 🤫
+          The big reveal is still a secret!
         </h2>
 
         <p className="mx-auto mt-3 max-w-sm text-sm leading-relaxed text-[#625761]">
@@ -69,7 +99,7 @@ export default function Reveal({onContinue, onBack}: Props) {
         </p>
 
         <div className="mt-5 rounded-2xl border border-pink-100 bg-white/70 p-4">
-          <Sparkles className="mx-auto mb-2 text-pink-500" size={24} />
+          <Sparkles className="mx-auto mb-2 text-[#e83e73]" size={24} />
 
           <p className="text-sm font-semibold leading-relaxed text-[#720C7D]">
             Until then, let's fill this beautiful journey with love!
@@ -78,9 +108,9 @@ export default function Reveal({onContinue, onBack}: Props) {
           <button
             type="button"
             onClick={onContinue}
-            className="mt-6 w-full rounded-full bg-gradient-to-r from-pink-500 to-purple-600 px-5 py-3 font-bold text-white shadow-lg transition hover:scale-[1.02]"
+            className="mt-6 w-full rounded-full bg-[#e83e73] px-5 py-3 font-bold text-white shadow-lg transition hover:scale-[1.02] hover:bg-[#d92f63]"
           >
-            Leave a little wish 💌
+            Leave a little wish
           </button>
 {/* 
           <p className="mt-2 text-sm leading-relaxed text-[#625761]">

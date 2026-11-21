@@ -24,17 +24,17 @@ const choices = [
 const questions = [
   {
     title: 'Who will Baby look like?',
-    subtitle: 'Whose little copy will I be? 🥰',
+    subtitle: 'Whose little copy will baby be? 🥰',
     emoji: '👶🏻',
   },
   {
     title: 'Who will Baby love the most?',
-    subtitle: 'Who will get all my cuddles? 💕',
+    subtitle: "Who will get all baby's cuddles? 💕",
     emoji: '💗',
   },
   {
-    title: 'What cute nickname should we call Baby?',
-    subtitle: 'Give me a special little name! ✨',
+    title: 'Suggest a cute nickname for Baby!',
+    subtitle: 'Give baby a special little name! ✨',
     emoji: '🍼',
   },
 ]
@@ -84,7 +84,20 @@ export default function BabyQuestions({ onContinue, onBack, initialAnswers }: Pr
       <div className="pointer-events-none absolute -left-16 top-10 h-40 w-40 rounded-full bg-pink-200/50 blur-3xl" />
       <div className="pointer-events-none absolute -right-16 bottom-10 h-40 w-40 rounded-full bg-purple-200/50 blur-3xl" />
 
-      <section className="relative w-full max-w-md">
+      {/* Twinkling sparkles */}
+      <div className="pointer-events-none absolute left-[20%] top-[20%] h-2 w-2 rounded-full bg-[#ff6b8a]/50 animate-twinkle" />
+      <div className="pointer-events-none absolute right-[22%] top-[35%] h-1.5 w-1.5 rounded-full bg-[#7048e8]/50 animate-twinkle-delay" />
+      <div className="pointer-events-none absolute bottom-[22%] left-[25%] h-1.5 w-1.5 rounded-full bg-[#ffb347]/60 animate-twinkle-delay-2" />
+      <Sparkles
+        aria-hidden="true"
+        className="pointer-events-none absolute left-[12%] top-[38%] h-5 w-5 animate-float-slow text-[#e83e73]/60 sm:h-6 sm:w-6"
+      />
+      <Sparkles
+        aria-hidden="true"
+        className="pointer-events-none absolute bottom-[18%] right-[12%] h-6 w-6 animate-float-delay text-[#7048e8]/60 sm:h-7 sm:w-7"
+      />
+
+      <section className="relative z-10 w-full max-w-md">
 
         {/* Header */}
         <div className="text-center">
@@ -203,7 +216,7 @@ export default function BabyQuestions({ onContinue, onBack, initialAnswers }: Pr
                 value={nickname}
                 onChange={(event) => setNickname(event.target.value)}
                 maxLength={50}
-                placeholder="Little Bean, Bubba, Sweet Pea..."
+                placeholder="Sudu baba, Chooty..."
                 className="w-full rounded-2xl border border-pink-200 bg-[#FFFAFC] px-4 py-3.5 text-sm outline-none transition focus:border-pink-500 focus:ring-2 focus:ring-pink-100"
               />
 
@@ -236,7 +249,7 @@ export default function BabyQuestions({ onContinue, onBack, initialAnswers }: Pr
             }
             className="flex flex-1 items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#E83E73] to-[#7048E8] px-5 py-3 font-bold text-white shadow-lg transition hover:scale-[1.02] disabled:cursor-not-allowed disabled:opacity-40"
           >
-            {step === 2 ? "Let's play!" : 'Next'}
+            {step === 2 ? "Let's go!" : 'Next'}
             {step === 2 ? (
               <Sparkles size={18} />
             ) : (
