@@ -6,10 +6,11 @@ import BackButton from './BackButton'
 type Props = {
   onContinue: (babyCallName: string) => void
   onBack: () => void
+  initialName?: string
 }
 
-export default function BabyCallName({ onContinue, onBack }: Props) {
-  const [babyCallName, setBabyCallName] = useState('')
+export default function BabyCallName({ onContinue, onBack, initialName = '' }: Props) {
+  const [babyCallName, setBabyCallName] = useState(initialName)
 
   const handleContinue = () => {
     const value = babyCallName.trim()

@@ -12,12 +12,13 @@ import BackButton from './BackButton'
 interface GenderGuessProps {
   onContinue: (guess: 'girl' | 'boy') => void
   onBack: () => void
+  initialGuess?: Guess | null
 }
 
 type Guess = 'girl' | 'boy'
 
-export default function GenderGuess({ onContinue, onBack }: GenderGuessProps) {
-  const [selected, setSelected] = useState<Guess | null>(null)
+export default function GenderGuess({ onContinue, onBack, initialGuess = null }: GenderGuessProps) {
+  const [selected, setSelected] = useState<Guess | null>(initialGuess)
 
   const handleSelect = (guess: Guess) => {
     setSelected(guess)

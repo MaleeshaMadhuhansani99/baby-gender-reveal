@@ -6,10 +6,11 @@ import BackButton from './BackButton'
 interface GuestNameProps {
   onContinue: (name: string) => void
   onBack: () => void
+  initialName?: string
 }
 
-export default function GuestName({ onContinue, onBack }: GuestNameProps) {
-  const [name, setName] = useState('')
+export default function GuestName({ onContinue, onBack, initialName = '' }: GuestNameProps) {
+  const [name, setName] = useState(initialName)
 
   const handleContinue = () => {
     const trimmedName = name.trim()

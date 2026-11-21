@@ -12,6 +12,7 @@ export type BabyAnswers = {
 type Props = {
   onContinue: (answers: BabyAnswers) => void
   onBack: () => void
+  initialAnswers?: BabyAnswers | null
 }
 
 const choices = [
@@ -38,16 +39,16 @@ const questions = [
   },
 ]
 
-export default function BabyQuestions({ onContinue, onBack }: Props) {
-  const [step, setStep] = useState(0)
+export default function BabyQuestions({ onContinue, onBack, initialAnswers }: Props) {
+  const [step, setStep] = useState(initialAnswers ? 2 : 0)
 
   const [looksLike, setLooksLike] =
-    useState<BabyAnswers['looks_like'] | ''>('')
+    useState<BabyAnswers['looks_like'] | ''>(initialAnswers?.looks_like ?? '')
 
   const [lovesMost, setLovesMost] =
-    useState<BabyAnswers['loves_most'] | ''>('')
+    useState<BabyAnswers['loves_most'] | ''>(initialAnswers?.loves_most ?? '')
 
-  const [nickname, setNickname] = useState('')
+  const [nickname, setNickname] = useState(initialAnswers?.baby_nickname ?? '')
 
   const handleNext = () => {
     if (step === 0 && !looksLike) return

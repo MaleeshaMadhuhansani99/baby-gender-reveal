@@ -15,6 +15,8 @@ type Props = {
   answers: BabyAnswers
   onViewWishes: () => void
   onBack: () => void
+  initialWish?: string
+  onWishChange?: (wish: string) => void
 }
 
 export default function WishForm({
@@ -24,8 +26,10 @@ export default function WishForm({
   answers,
   onViewWishes,
   onBack,
+  initialWish = '',
+  onWishChange,
 }: Props) {
-  const [wish, setWish] = useState('')
+  const [wish, setWish] = useState(initialWish)
   const [loading, setLoading] = useState(false)
   const [saved, setSaved] = useState(false)
   const [errorMessage, setErrorMessage] = useState('')
@@ -127,7 +131,10 @@ export default function WishForm({
         <textarea
           id="guest-wish"
           value={wish}
-          onChange={(event) => setWish(event.target.value)}
+          onChange={(event) => {
+            setWish(event.target.value)
+            onWishChange?.(event.target.value)
+          }}
           placeholder="Wishing your little family a lifetime of love..."
           maxLength={500}
           required

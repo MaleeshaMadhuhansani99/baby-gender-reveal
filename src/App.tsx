@@ -32,9 +32,10 @@ function App() {
   )
 
   const [guestName, setGuestName] = useState('')
-  const [guess, setGuess] = useState<BabyGender>('girl')
+  const [guess, setGuess] = useState<BabyGender | null>(null)
   const [answers, setAnswers] = useState<BabyAnswers | null>(null)
   const [babyCallName, setBabyCallName] = useState('')
+  const [wish, setWish] = useState('')
 
   const openWishes = () => {
     window.location.hash = 'wishes'
@@ -54,6 +55,7 @@ function App() {
     if (page === 'name') {
       return (
         <GuestName
+          initialName={guestName}
           onBack={() => setPage('welcome')}
           onContinue={(name) => {
             setGuestName(name.trim())
@@ -66,6 +68,7 @@ function App() {
     if (page === 'baby-call-name') {
       return (
         <BabyCallName
+          initialName={babyCallName}
           onBack={() => setPage('name')}
           onContinue={(value) => {
             setBabyCallName(value)
@@ -78,6 +81,7 @@ function App() {
     if (page === 'guess') {
       return (
         <GenderGuess
+          initialGuess={guess}
           onBack={() => setPage('baby-call-name')}
           onContinue={(selectedGuess) => {
             setGuess(selectedGuess)
@@ -90,6 +94,7 @@ function App() {
     if (page === 'questions') {
       return (
         <BabyQuestions
+          initialAnswers={answers}
           onBack={() => setPage('guess')}
           onContinue={(babyAnswers) => {
             setAnswers(babyAnswers)
@@ -121,7 +126,7 @@ function App() {
       )
     }
 
-    if (page === 'wish' && answers) {
+    if (page === 'wish' && answers && guess) {
       return (
         <WishForm
           name={guestName}
@@ -130,6 +135,8 @@ function App() {
           answers={answers}
           onViewWishes={openWishes}
           onBack={() => setPage('reveal')}
+          initialWish={wish}
+          onWishChange={setWish}
         />
       )
     }
