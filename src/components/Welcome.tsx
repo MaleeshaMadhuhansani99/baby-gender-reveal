@@ -3,9 +3,10 @@ import {useLanguage} from '../context/LanguageContext'
 
 interface WelcomeProps {
   onContinue: () => void
+  onViewWishes: () => void
 }
 
-export default function Welcome({onContinue}: WelcomeProps) {
+export default function Welcome({onContinue, onViewWishes}: WelcomeProps) {
   const {t, language} = useLanguage()
 
   return (
@@ -166,10 +167,10 @@ export default function Welcome({onContinue}: WelcomeProps) {
           </div>
 
           {/* CTA */}
-          <div className="welcome-fade welcome-delay-4 shrink-0">
+          <div className="welcome-fade welcome-delay-4 flex shrink-0 flex-col items-center text-center">
             <button
               type="button"
-              className="cta-glow group flex min-h-[clamp(2.5rem,6vh,3.2rem)] items-center gap-2 rounded-full bg-[#e83e73] px-[clamp(1.1rem,4vw,2rem)] py-2 text-[clamp(0.7rem,1.7vw,0.9rem)] font-bold text-white transition duration-300 hover:-translate-y-1 hover:bg-[#d92f63] active:translate-y-0"
+              className="cta-glow group mx-auto flex min-h-[clamp(2.5rem,6vh,3.2rem)] items-center gap-2 rounded-full bg-[#e83e73] px-[clamp(1.1rem,4vw,2rem)] py-2 text-[clamp(0.7rem,1.7vw,0.9rem)] font-bold text-white transition duration-300 hover:-translate-y-1 hover:bg-[#d92f63] active:translate-y-0"
               onClick={onContinue}
             >
               <span>Let’s go</span>
@@ -182,6 +183,13 @@ export default function Welcome({onContinue}: WelcomeProps) {
             <p className="mt-[clamp(0.4rem,1vh,0.7rem)] text-[clamp(0.5rem,1.3vw,0.7rem)] font-semibold tracking-wide text-[#81727d]">
               A little journey awaits you ✨
             </p>
+            <button
+              type="button"
+              onClick={onViewWishes}
+              className="mt-2 rounded-full px-4 py-2 text-xs font-semibold text-[#7048e8] underline decoration-[#7048e8]/40 underline-offset-4 transition hover:text-[#e83e73] sm:text-sm"
+            >
+              {t('homeViewWishes')}
+            </button>
           </div>
         </div>
       </section>

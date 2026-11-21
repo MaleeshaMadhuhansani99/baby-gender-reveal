@@ -143,7 +143,6 @@ export default function WishesWall({onBack}: WishesWallProps) {
           className="mb-8 flex items-center gap-2 text-[#720C7D] transition hover:opacity-70"
         >
           <ArrowLeft size={18} />
-          Back to celebration
         </button>
 
         {/* Header */}

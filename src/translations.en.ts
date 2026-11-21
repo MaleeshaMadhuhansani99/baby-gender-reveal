@@ -28,6 +28,7 @@ const en = {
   greatestAdventure: 'are getting ready for their greatest little adventure',
   babyOnTheWay: 'Baby on the way',
   littleJourney: 'A little journey awaits you',
+  homeViewWishes: 'View wishes and predictions',
   welcomeTitle: 'Someone very special is coming...',
   guestNameTitle: 'Tell us who you are! 💕',
   babyCallNameTitle: 'What should Baby call you? 🥰',

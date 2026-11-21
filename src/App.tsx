@@ -38,15 +38,17 @@ function App() {
   const [answers, setAnswers] = useState<BabyAnswers | null>(null)
   const [babyCallName, setBabyCallName] = useState('')
   const [wish, setWish] = useState('')
+  const [wishesReturnPage, setWishesReturnPage] = useState<Page>('welcome')
 
-  const openWishes = () => {
+  const openWishes = (returnPage: Page) => {
+    setWishesReturnPage(returnPage)
     window.location.hash = 'wishes'
     setPage('wishes')
   }
 
   const closeWishes = () => {
     window.location.hash = ''
-    setPage(answers ? 'wish' : 'welcome')
+    setPage(wishesReturnPage)
   }
 
   const renderPage = () => {
@@ -135,15 +137,20 @@ function App() {
           babyCallName={babyCallName}
           guess={guess}
           answers={answers}
-          onViewWishes={openWishes}
-          onBack={() => setPage('reveal')}
+          onViewWishes={() => openWishes('wish')}
+          onBack={() => setPage('welcome')}
           initialWish={wish}
           onWishChange={setWish}
         />
       )
     }
 
-    return <Welcome onContinue={() => setPage('name')} />
+    return (
+      <Welcome
+        onContinue={() => setPage('name')}
+        onViewWishes={() => openWishes('welcome')}
+      />
+    )
   }
 
   return (
