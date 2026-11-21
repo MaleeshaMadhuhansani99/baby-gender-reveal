@@ -13,6 +13,7 @@ import WishForm from './components/WishForm'
 import WishesWall from './components/WishesWall'
 import SoundEffects from './components/SoundEffects'
 import BabyCallName from './components/BabyCallName'
+import CreatorCredit from './components/CreatorCredit'
 
 type Page =
   | 'welcome'
@@ -148,6 +149,7 @@ function App() {
     <>
       <SoundEffects />
       {renderPage()}
+      <CreatorCredit />
     </>
   )
 }
