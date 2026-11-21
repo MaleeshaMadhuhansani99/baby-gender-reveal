@@ -19,7 +19,7 @@ export default function Reveal({onContinue, onBack}: Props) {
   }, [])
 
   return (
-    <main className="relative flex h-[100svh] items-center justify-center overflow-y-auto bg-[#fff8f5] px-5 py-6 text-center text-[#30252f]">
+    <main className="relative flex h-[100svh] items-center justify-center overflow-y-hidden overflow-x-hidden bg-[#fff8f5] px-5 py-6 text-center text-[#30252f]">
       <BackButton onClick={onBack} />
       <div className="pointer-events-none absolute -left-24 -top-24 h-[35vh] w-[35vh] rounded-full bg-[#ff6b8a]/20 blur-3xl" />
       <div className="pointer-events-none absolute -right-24 top-[8%] h-[40vh] w-[40vh] rounded-full bg-[#7048e8]/15 blur-3xl" />

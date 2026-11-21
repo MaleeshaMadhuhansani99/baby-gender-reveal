@@ -1,5 +1,5 @@
 import {useEffect, useState} from 'react'
-import {Heart, ArrowLeft, RefreshCw, Baby, Sparkles} from 'lucide-react'
+import {Heart, ArrowLeft, RefreshCw, Baby, Sparkles, Star} from 'lucide-react'
 import {fetchWishes} from '../services/guestService'
 import type {GuestResponse} from '../services/guestService'
 
@@ -74,6 +74,41 @@ export default function WishesWall({onBack}: WishesWallProps) {
 
   return (
     <main className="relative h-[100dvh] w-full overflow-y-auto overscroll-contain bg-[#FFF8F5] px-5 py-10">
+      {/* Floating sparkles, stars, and flowers */}
+      <div className="pointer-events-none absolute -left-20 top-[12%] h-40 w-40 rounded-full bg-pink-200/40 blur-3xl" />
+      <div className="pointer-events-none absolute -right-20 top-[38%] h-44 w-44 rounded-full bg-purple-200/40 blur-3xl" />
+
+      <Sparkles
+        aria-hidden="true"
+        className="pointer-events-none absolute left-[12%] top-[22%] h-6 w-6 animate-float-slow text-[#e83e73]/60 sm:h-8 sm:w-8"
+      />
+      <Sparkles
+        aria-hidden="true"
+        className="pointer-events-none absolute right-[14%] top-[50%] h-7 w-7 animate-float-delay text-[#7048e8]/60 sm:h-9 sm:w-9"
+      />
+      <Star
+        aria-hidden="true"
+        className="pointer-events-none absolute bottom-[20%] left-[16%] h-5 w-5 animate-twinkle fill-amber-300 text-amber-400 sm:h-7 sm:w-7"
+      />
+      <Star
+        aria-hidden="true"
+        className="pointer-events-none absolute right-[10%] bottom-[32%] h-5 w-5 animate-twinkle-delay fill-pink-300 text-pink-400 sm:h-6 sm:w-6"
+      />
+      <div className="pointer-events-none absolute left-[28%] top-[40%] h-2 w-2 rounded-full bg-[#ff6b8a]/50 animate-twinkle" />
+      <div className="pointer-events-none absolute right-[30%] bottom-[18%] h-1.5 w-1.5 rounded-full bg-[#7048e8]/50 animate-twinkle-delay-2" />
+      <span
+        aria-hidden="true"
+        className="pointer-events-none absolute right-[8%] top-[20%] animate-float text-2xl opacity-70 sm:text-4xl"
+      >
+        🌸
+      </span>
+      <span
+        aria-hidden="true"
+        className="pointer-events-none absolute bottom-[12%] left-[8%] animate-float-delay text-2xl opacity-70 sm:text-4xl"
+      >
+        🌼
+      </span>
+
       {/* Flying butterflies */}
       <div className="butterfly butterfly-one">
         <span className="butterfly-wing butterfly-wing-left" />
