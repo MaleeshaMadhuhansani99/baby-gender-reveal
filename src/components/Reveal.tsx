@@ -67,7 +67,7 @@ export default function Reveal({onContinue, onBack}: Props) {
         <Sparkles size={17} />
       </div>
 
-      <section className="relative z-10 w-full max-w-md">
+      <section className="relative z-10 my-auto w-full max-w-md">
         <Stars
           className="mx-auto mb-3 animate-twinkle text-[#e83e73]"
           size={36}

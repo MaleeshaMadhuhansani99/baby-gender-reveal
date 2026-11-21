@@ -122,7 +122,7 @@ export default function WishForm({
       <main className="relative flex min-h-[100svh] items-center justify-center overflow-hidden bg-[#FFF8F5] px-5 py-8 text-center">
         <BackgroundDecorations />
         <BackButton onClick={onBack} />
-        <section className="relative z-10 w-full max-w-md rounded-3xl border border-pink-100 bg-white/90 p-7 shadow-xl shadow-pink-100 backdrop-blur-sm">
+        <section className="relative z-10 my-auto w-full max-w-md rounded-3xl border border-pink-100 bg-white/90 p-7 shadow-xl shadow-pink-100 backdrop-blur-sm">
           <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-pink-100 text-pink-600">
             <Heart size={42} fill="currentColor" />
           </div>
@@ -155,7 +155,7 @@ export default function WishForm({
   }
 
   return (
-    <main className="relative flex min-h-[100svh] items-center justify-center overflow-hidden bg-[#FFF8F5] px-4 py-6 text-[#30252F]">
+    <main className="relative flex h-[100svh] items-center justify-center overflow-x-hidden overflow-y-auto bg-[#FFF8F5] px-4 py-6 text-[#30252F]">
       <BackgroundDecorations />
       <BackButton onClick={onBack} />
       <form
@@ -193,7 +193,7 @@ export default function WishForm({
           maxLength={500}
           required
           rows={4}
-          className="w-full resize-none rounded-2xl border border-pink-200 bg-[#FFFAFC] px-4 py-3 text-sm outline-none focus:border-pink-500 focus:ring-2 focus:ring-pink-100"
+          className="w-full resize-none rounded-2xl border border-pink-200 bg-[#FFFAFC] px-4 py-3 text-base outline-none focus:border-pink-500 focus:ring-2 focus:ring-pink-100"
         />
 
         <p className="mt-1 text-right text-xs text-[#81727D]">
