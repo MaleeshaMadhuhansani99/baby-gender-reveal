@@ -1,20 +1,13 @@
-
-import { useEffect, useState } from 'react'
-import {
-  Heart,
-  ArrowLeft,
-  RefreshCw,
-  Baby,
-  Sparkles,
-} from 'lucide-react'
-import { fetchWishes } from '../services/guestService'
-import type { GuestResponse } from '../services/guestService'
+import {useEffect, useState} from 'react'
+import {Heart, ArrowLeft, RefreshCw, Baby, Sparkles} from 'lucide-react'
+import {fetchWishes} from '../services/guestService'
+import type {GuestResponse} from '../services/guestService'
 
 interface WishesWallProps {
   onBack: () => void
 }
 
-export default function WishesWall({ onBack }: WishesWallProps) {
+export default function WishesWall({onBack}: WishesWallProps) {
   const [wishes, setWishes] = useState<GuestResponse[]>([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState('')
@@ -74,19 +67,14 @@ export default function WishesWall({ onBack }: WishesWallProps) {
   const totalGuesses = boyCount + girlCount
 
   const boyPercentage =
-    totalGuesses > 0
-      ? Math.round((boyCount / totalGuesses) * 100)
-      : 0
+    totalGuesses > 0 ? Math.round((boyCount / totalGuesses) * 100) : 0
 
   const girlPercentage =
-    totalGuesses > 0
-      ? Math.round((girlCount / totalGuesses) * 100)
-      : 0
+    totalGuesses > 0 ? Math.round((girlCount / totalGuesses) * 100) : 0
 
   return (
     <main className="h-[100dvh] w-full overflow-y-auto overscroll-contain bg-[#FFF8F5] px-5 py-10">
       <div className="mx-auto w-full max-w-6xl">
-
         {/* Back button */}
         <button
           onClick={onBack}
@@ -100,10 +88,7 @@ export default function WishesWall({ onBack }: WishesWallProps) {
         <div className="mb-12 text-center">
           <div className="mb-4 flex justify-center">
             <div className="rounded-full bg-pink-100 p-4">
-              <Heart
-                size={32}
-                className="fill-pink-500 text-pink-500"
-              />
+              <Heart size={32} className="fill-pink-500 text-pink-500" />
             </div>
           </div>
 
@@ -128,9 +113,7 @@ export default function WishesWall({ onBack }: WishesWallProps) {
         {loading && (
           <div className="py-20 text-center">
             <div className="mx-auto mb-4 h-10 w-10 animate-spin rounded-full border-4 border-pink-200 border-t-[#720C7D]" />
-            <p className="text-gray-500">
-              Gathering all the lovely wishes...
-            </p>
+            <p className="text-gray-500">Gathering all the lovely wishes...</p>
           </div>
         )}
 
@@ -178,24 +161,20 @@ export default function WishesWall({ onBack }: WishesWallProps) {
             </div>
 
             <div className="mb-4 flex justify-between text-sm font-semibold">
-              <span className="text-blue-600">
-                💙 Boy {boyPercentage}%
-              </span>
+              <span className="text-blue-600">💙 Boy {boyPercentage}%</span>
 
-              <span className="text-pink-600">
-                Girl {girlPercentage}% 💗
-              </span>
+              <span className="text-pink-600">Girl {girlPercentage}% 💗</span>
             </div>
 
             <div className="flex h-5 overflow-hidden rounded-full bg-pink-100">
               <div
                 className="bg-blue-400 transition-all duration-500"
-                style={{ width: `${boyPercentage}%` }}
+                style={{width: `${boyPercentage}%`}}
               />
 
               <div
                 className="bg-pink-400 transition-all duration-500"
-                style={{ width: `${girlPercentage}%` }}
+                style={{width: `${girlPercentage}%`}}
               />
             </div>
 
@@ -216,16 +195,17 @@ export default function WishesWall({ onBack }: WishesWallProps) {
               >
                 {/* Heart icon */}
                 <div className="absolute right-6 top-6">
-                  <Heart
-                    size={20}
-                    className="fill-pink-100 text-pink-300"
-                  />
+                  <Heart size={20} className="fill-pink-100 text-pink-300" />
                 </div>
 
                 {/* Guest initial */}
-                <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-pink-100 to-purple-100 text-lg font-bold text-[#720C7D]">
-                  {item.name?.charAt(0).toUpperCase() || '?'}
-                </div>
+                <h3 className="mb-2 text-lg font-extrabold tracking-wide text-[#720C7D] sm:text-xl">
+                  <span className="text-pink-500">Baby's</span>{' '}
+                  <span className="bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">
+                    {item.baby_call_name?.trim() || item.name}
+                  </span>
+                  <span className="ml-1 text-pink-400">♥</span>
+                </h3>
 
                 {/* Guest gender guess */}
                 <div
@@ -273,7 +253,7 @@ export default function WishesWall({ onBack }: WishesWallProps) {
 
                 {/* Wish */}
                 <div className="mb-6">
-                  <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-pink-500">
+                  <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-purple-500">
                     A little wish for baby 💕
                   </p>
 
@@ -284,9 +264,7 @@ export default function WishesWall({ onBack }: WishesWallProps) {
 
                 {/* Guest details */}
                 <div className="border-t border-pink-100 pt-4">
-                  <h3 className="font-semibold text-[#720C7D]">
-                    {item.name}
-                  </h3>
+                  <h3 className="font-semibold text-[#720C7D]">{item.name}</h3>
 
                   <p className="mt-1 text-xs text-gray-400">
                     {formatDate(item.created_at)}

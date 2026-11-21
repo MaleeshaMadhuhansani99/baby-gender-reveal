@@ -44,13 +44,13 @@ export default function Reveal({onContinue}: Props) {
           A little miracle is on the way
         </p> */}
 
-        <h1 className="mt-4 text-4xl font-black text-[#720C7D] sm:text-5xl">
+        <h1 className="mt-4 text-2xl font-black text-[#720C7D] sm:text-2xl">
           Oops! Not just yet! 💕
         </h1>
 
-        <div className="mx-auto my-6 flex h-48 w-48 items-center justify-center rounded-full border-4 border-pink-300 bg-white/80 shadow-2xl shadow-pink-200 sm:h-56 sm:w-56">
+        <div className="mx-auto my-6 flex h-36 w-36 items-center justify-center rounded-full border-4 border-pink-300 bg-white/80 shadow-2xl shadow-pink-200 sm:h-42 sm:w-42">
           <div>
-            <div className="text-7xl sm:text-8xl">🎁</div>
+            <div className="text-2xl sm:text-5xl">🎁</div>
 
             <p className="mt-3 text-xl font-black text-pink-600">SURPRISE!</p>
           </div>
@@ -61,7 +61,7 @@ export default function Reveal({onContinue}: Props) {
         </h2>
 
         <p className="mx-auto mt-3 max-w-sm text-sm leading-relaxed text-[#625761]">
-          It's not time to reveal the gender just yet. Wait for the big reveal
+          Wait for the big reveal
           to discover whether it's a little prince or princess!
         </p>
 

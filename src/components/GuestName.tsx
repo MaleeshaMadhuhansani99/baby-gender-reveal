@@ -74,7 +74,7 @@ export default function GuestName({ onContinue }: GuestNameProps) {
             />
 
             <span className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#81727d] sm:text-xs">
-              Before we begin
+              First
             </span>
 
             <Sparkles
@@ -93,7 +93,7 @@ export default function GuestName({ onContinue }: GuestNameProps) {
                 lineHeight: 1.05,
               }}
             >
-              What should we call you?
+              Tell us who you are! 💕
             </h1>
 
             <p
@@ -151,7 +151,7 @@ export default function GuestName({ onContinue }: GuestNameProps) {
                   : 'cursor-not-allowed bg-[#30252f]/10 text-[#30252f]/30'
               }`}
             >
-              <span>Let's begin</span>
+              <span>Next</span>
 
               <ArrowRight
                 size={17}

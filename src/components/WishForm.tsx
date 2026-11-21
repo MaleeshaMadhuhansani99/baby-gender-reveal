@@ -9,6 +9,7 @@ export type BabyGender = 'girl' | 'boy'
 
 type Props = {
   name: string
+  babyCallName: string
   guess: BabyGender
   answers: BabyAnswers
   onViewWishes: () => void
@@ -17,6 +18,7 @@ type Props = {
 export default function WishForm({
   name,
   guess,
+  babyCallName,
   answers,
   onViewWishes,
 }: Props) {
@@ -36,6 +38,7 @@ export default function WishForm({
       await saveGuestResponse({
         name,
         guess,
+        baby_call_name: babyCallName,
         looks_like: answers.looks_like,
         loves_most: answers.loves_most,
         baby_nickname: answers.baby_nickname,

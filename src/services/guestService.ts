@@ -6,6 +6,7 @@ import type { BabyGender } from '../components/WishForm'
 export type GuestResponse = {
   name: string
   guess: BabyGender
+  baby_call_name: string
   looks_like: BabyAnswers['looks_like']
   loves_most: BabyAnswers['loves_most']
   baby_nickname: string
@@ -19,6 +20,7 @@ export async function saveGuestResponse(response: GuestResponse) {
     .insert({
       name: response.name,
       guess: response.guess,
+      baby_call_name: response.baby_call_name,
       looks_like: response.looks_like,
       loves_most: response.loves_most,
       baby_nickname: response.baby_nickname,
@@ -34,7 +36,7 @@ export async function saveGuestResponse(response: GuestResponse) {
 export async function fetchWishes(): Promise<GuestResponse[]> {
   const { data, error } = await supabase
     .from('guests')
-    .select('name, guess, looks_like, loves_most, baby_nickname, created_at, wish')
+    .select('name, guess, baby_call_name, looks_like, loves_most, baby_nickname, created_at, wish')
     .not('wish', 'is', null)
     .neq('wish', '')
 

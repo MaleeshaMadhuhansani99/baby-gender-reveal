@@ -1,22 +1,23 @@
-
-import { useState } from 'react'
+import {useState} from 'react'
 
 import Welcome from './components/Welcome'
 import GuestName from './components/GuestName'
 import GenderGuess from './components/GenderGuess'
 import BabyQuestions from './components/BabyQuestions'
-import type { BabyAnswers } from './components/BabyQuestions'
+import type {BabyAnswers} from './components/BabyQuestions'
 // import MiniGame from './components/MiniGame'
 import Countdown from './components/Countdown'
 import Reveal from './components/Reveal'
-import type { BabyGender } from './components/WishForm'
+import type {BabyGender} from './components/WishForm'
 import WishForm from './components/WishForm'
 import WishesWall from './components/WishesWall'
 import SoundEffects from './components/SoundEffects'
+import BabyCallName from './components/BabyCallName'
 
 type Page =
   | 'welcome'
   | 'name'
+  | 'baby-call-name'
   | 'guess'
   | 'questions'
   // | 'game'
@@ -27,12 +28,13 @@ type Page =
 
 function App() {
   const [page, setPage] = useState<Page>(() =>
-    window.location.hash === '#wishes' ? 'wishes' : 'welcome'
+    window.location.hash === '#wishes' ? 'wishes' : 'welcome',
   )
 
   const [guestName, setGuestName] = useState('')
   const [guess, setGuess] = useState<BabyGender>('girl')
   const [answers, setAnswers] = useState<BabyAnswers | null>(null)
+  const [babyCallName, setBabyCallName] = useState('')
 
   const openWishes = () => {
     window.location.hash = 'wishes'
@@ -54,6 +56,17 @@ function App() {
         <GuestName
           onContinue={(name) => {
             setGuestName(name.trim())
+            setPage('baby-call-name')
+          }}
+        />
+      )
+    }
+
+    if (page === 'baby-call-name') {
+      return (
+        <BabyCallName
+          onContinue={(value) => {
+            setBabyCallName(value)
             setPage('guess')
           }}
         />
@@ -91,17 +104,14 @@ function App() {
     }
 
     if (page === 'reveal') {
-      return (
-        <Reveal
-          onContinue={() => setPage('wish')}
-        />
-      )
+      return <Reveal onContinue={() => setPage('wish')} />
     }
 
     if (page === 'wish' && answers) {
       return (
         <WishForm
           name={guestName}
+          babyCallName={babyCallName}
           guess={guess}
           answers={answers}
           onViewWishes={openWishes}
@@ -109,9 +119,7 @@ function App() {
       )
     }
 
-    return (
-      <Welcome onContinue={() => setPage('name')} />
-    )
+    return <Welcome onContinue={() => setPage('name')} />
   }
 
   return (
