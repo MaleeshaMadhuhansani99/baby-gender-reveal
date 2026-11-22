@@ -188,7 +188,7 @@ export default function Welcome({onContinue, onViewWishes}: WelcomeProps) {
               onClick={onViewWishes}
               className="mt-2 rounded-full px-4 py-2 text-xs font-semibold text-[#7048e8] underline decoration-[#7048e8]/40 underline-offset-4 transition hover:text-[#e83e73] sm:text-sm"
             >
-              {t('homeViewWishes')}
+              View all wishes 💌
             </button>
           </div>
         </div>

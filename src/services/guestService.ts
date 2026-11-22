@@ -38,6 +38,7 @@ export async function fetchWishes(): Promise<GuestResponse[]> {
     .select('name, guess, baby_call_name, looks_like, loves_most, baby_nickname, created_at, wish')
     .not('wish', 'is', null)
     .neq('wish', '')
+    .order('created_at', { ascending: true })
 
   if (error) {
     console.error('Error fetching guest insights:', error)

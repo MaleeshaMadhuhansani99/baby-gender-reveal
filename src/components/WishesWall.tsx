@@ -315,7 +315,7 @@ export default function WishesWall({onBack}: WishesWallProps) {
                 {/* Wish */}
                 <div className="mb-6">
                   <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-purple-500">
-                    A little wish for baby 💕
+                    A little wish for the baby and the family 💕
                   </p>
 
                   <p className="min-h-20 whitespace-pre-wrap break-words leading-relaxed text-gray-700">
