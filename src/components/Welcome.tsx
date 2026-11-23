@@ -161,7 +161,7 @@ export default function Welcome({onContinue, onViewWishes}: WelcomeProps) {
             </div>
 
             {/* Star */}
-            <div className="decoration-float decoration-delay absolute -bottom-1 -left-2 flex h-[clamp(1.8rem,5vh,2.5rem)] w-[clamp(1.8rem,5vh,2.5rem)] items-center justify-center rounded-full bg-white text-[clamp(0.8rem,2vh,1.1rem)] shadow-md">
+            <div className="decoration-float decoration-delay absolute -bottom-1 -left-2 flex h-[clamp(1.8rem,5vh,2.5rem)] w-[clamp(1.8rem,5vh,2.5rem)] items-center justify-center text-[clamp(0.8rem,2vh,1.1rem)]">
               ⭐
             </div>
           </div>
