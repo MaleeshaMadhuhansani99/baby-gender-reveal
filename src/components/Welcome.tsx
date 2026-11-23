@@ -1,4 +1,4 @@
-import {Heart, Sparkles, Stars} from 'lucide-react'
+import {Heart, Sparkles} from 'lucide-react'
 import {useLanguage} from '../context/LanguageContext'
 
 interface WelcomeProps {
@@ -88,12 +88,11 @@ export default function Welcome({onContinue, onViewWishes}: WelcomeProps) {
       <section className="relative z-10 flex h-full w-full items-center justify-center px-4">
         <div className="flex h-full w-full max-w-2xl flex-col items-center justify-center text-center">
           {/* Top label */}
-          <div className="welcome-fade flex shrink-0 items-center gap-2 rounded-full px-4 py-2 text-[clamp(0.55rem,1.5vw,0.75rem)] font-bold uppercase tracking-[0.12em] text-[#7048e8] shadow-sm ring-1 ring-[#eee5f5]">
+          <div className="welcome-fade flex shrink-0 items-center gap-2 rounded-full bg-white px-4 py-2 text-[clamp(0.55rem,1.5vw,0.75rem)] font-bold uppercase tracking-[0.12em] text-[#7048e8] shadow-sm ring-1 ring-[#eee5f5]">
             <Sparkles
               className="shrink-0 text-[#ff9f1c]"
               size="clamp(11px, 1.5vw, 14px)"
             />
-
             <span>A little surprise is waiting</span>
           </div>
 
@@ -104,7 +103,7 @@ export default function Welcome({onContinue, onViewWishes}: WelcomeProps) {
             </p> */}
 
             <h2 className="mt-1 font-serif text-[clamp(1.35rem,4vw,2rem)] font-bold leading-tight text-[#303b82]">
-              Asinthaka <span className="text-[#e83e73]">&</span> Dilki 
+              Asinthaka <span className="text-[#e83e73]">&</span> Dilki
             </h2>
 
             <p className="mt-0.5 text-[clamp(0.62rem,1.7vw,0.85rem)] font-medium text-[#81727d]">
@@ -118,11 +117,13 @@ export default function Welcome({onContinue, onViewWishes}: WelcomeProps) {
               Baby on the way
             </p>
 
-            <h1 className={`font-serif font-bold leading-[1.05] tracking-tight text-[#720c7d] ${
-              language === 'si'
-                ? 'text-[clamp(1.7rem,6.5vw,3rem)]'
-                : 'text-[clamp(2rem,7.5vw,4rem)]'
-            }`}>
+            <h1
+              className={`font-serif font-bold leading-[1.05] tracking-tight text-[#720c7d] ${
+                language === 'si'
+                  ? 'text-[clamp(1.7rem,6.5vw,3rem)]'
+                  : 'text-[clamp(2rem,7.5vw,4rem)]'
+              }`}
+            >
               {language === 'en' ? (
                 <>
                   Someone very
@@ -161,7 +162,7 @@ export default function Welcome({onContinue, onViewWishes}: WelcomeProps) {
             </div>
 
             {/* Star */}
-            <div className="decoration-float decoration-delay absolute -bottom-1 -left-2 flex h-[clamp(1.8rem,5vh,2.5rem)] w-[clamp(1.8rem,5vh,2.5rem)] items-center justify-center text-[clamp(0.8rem,2vh,1.1rem)]">
+            <div className="decoration-float decoration-delay absolute -bottom-1 -left-2 flex h-[clamp(1.8rem,5vh,2.5rem)] w-[clamp(1.8rem,5vh,2.5rem)] items-center justify-center rounded-full bg-white text-[clamp(0.8rem,2vh,1.1rem)] shadow-md">
               ⭐
             </div>
           </div>
