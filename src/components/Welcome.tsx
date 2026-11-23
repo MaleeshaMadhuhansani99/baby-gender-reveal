@@ -73,7 +73,7 @@ export default function Welcome({onContinue, onViewWishes}: WelcomeProps) {
         <Sparkles size={22} />
       </div>
 
-      <div className="sparkle sparkle-two">
+      <div className="sparkle sparkle-one">
         <Sparkles size={20} />
       </div>
 
