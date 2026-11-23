@@ -43,7 +43,7 @@ export default function Countdown({ onComplete, onBack }: Props) {
   }, [count, onComplete])
 
   return (
-    <main className="relative flex h-[100dvh] min-h-[100svh] items-center justify-center overflow-x-hidden overflow-y-hidden overscroll-contain bg-[#FFF8F5] px-5 py-8 text-center">
+    <main className="screen-page relative flex items-center justify-center overflow-x-hidden bg-[#FFF8F5] text-center">
       <BackButton onClick={onBack} />
       <Star
         aria-hidden="true"
@@ -87,7 +87,8 @@ export default function Countdown({ onComplete, onBack }: Props) {
         aria-hidden="true"
         className="sparkle pointer-events-none left-[48%] top-[12%] h-5 w-5 text-purple-300 sm:h-6 sm:w-6"
       />
-      <section className="relative z-10 my-auto">
+      <section className="screen-stage relative z-10 flex flex-col items-center justify-center">
+        <div className="screen-fit-content">
         <Sparkles className="mx-auto mb-5 text-purple-500" size={36} />
 
         <p className="text-xl font-bold uppercase tracking-[0.2em] text-pink-600">
@@ -100,7 +101,7 @@ export default function Countdown({ onComplete, onBack }: Props) {
 
         <div
           key={count}
-          className="mx-auto my-7 flex h-36 w-36 items-center justify-center rounded-full bg-gradient-to-br from-pink-400 to-purple-500 text-7xl font-black text-white shadow-xl shadow-pink-200"
+          className="mx-auto my-5 flex h-[clamp(6rem,18vh,9rem)] w-[clamp(6rem,18vh,9rem)] items-center justify-center rounded-full bg-gradient-to-br from-pink-400 to-purple-500 text-[clamp(3rem,9vh,4.5rem)] font-black text-white shadow-xl shadow-pink-200"
         >
           {count === 0 ? '👶' : count}
         </div>
@@ -108,6 +109,7 @@ export default function Countdown({ onComplete, onBack }: Props) {
         <p className="text-sm text-[#625761]">
           A little surprise, a lifetime of love...
         </p>
+        </div>
       </section>
     </main>
   )

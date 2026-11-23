@@ -10,7 +10,7 @@ export default function Welcome({onContinue, onViewWishes}: WelcomeProps) {
   const {t, language} = useLanguage()
 
   return (
-    <main className="relative h-[100svh] w-full overflow-hidden bg-[#fff8f5] text-[#30252f]">
+    <main className="screen-page relative w-full overflow-x-hidden bg-[#fff8f5] text-[#30252f]">
       {/* Background glow */}
       <div className="pointer-events-none absolute -left-24 -top-24 h-[35vh] w-[35vh] rounded-full bg-[#ff6b8a]/20 blur-3xl" />
 
@@ -73,7 +73,7 @@ export default function Welcome({onContinue, onViewWishes}: WelcomeProps) {
         <Sparkles size={22} />
       </div>
 
-      <div className="sparkle sparkle-two bg-none">
+      <div className="sparkle sparkle-two">
         <Sparkles size={20} />
       </div>
 
@@ -85,8 +85,8 @@ export default function Welcome({onContinue, onViewWishes}: WelcomeProps) {
           MAIN CONTENT
           ===================================================== */}
 
-      <section className="relative z-10 flex h-full w-full items-center justify-center px-4">
-        <div className="flex h-full w-full max-w-2xl flex-col items-center justify-center text-center">
+      <section className="screen-stage relative z-10 flex w-full items-center justify-center">
+        <div className="screen-fit-content flex w-full max-w-2xl flex-col items-center justify-center text-center">
           {/* Top label */}
           <div className="welcome-fade flex shrink-0 items-center gap-2 rounded-full bg-white px-4 py-2 text-[clamp(0.55rem,1.5vw,0.75rem)] font-bold uppercase tracking-[0.12em] text-[#7048e8] shadow-sm ring-1 ring-[#eee5f5]">
             <Sparkles
@@ -149,8 +149,8 @@ export default function Welcome({onContinue, onViewWishes}: WelcomeProps) {
             <div className="absolute inset-0 scale-[1.1] rounded-full border-2 border-[#e83e73]/20 animate-pulse" />
 
             {/* Baby */}
-            <div className="baby-float relative flex h-[clamp(6.8rem,20vh,12rem)] w-[clamp(6.8rem,20vh,12rem)] items-center justify-center rounded-full bg-gradient-to-br from-[#ffd6df] via-white to-[#dcd2ff] shadow-[0_15px_45px_rgba(232,62,115,0.20)]">
-              <div className="baby-bounce text-[clamp(3.3rem,11vh,5.5rem)]">
+            <div className="baby-float relative flex h-[clamp(5rem,17vh,12rem)] w-[clamp(5rem,17vh,12rem)] items-center justify-center rounded-full bg-gradient-to-br from-[#ffd6df] via-white to-[#dcd2ff] shadow-[0_15px_45px_rgba(232,62,115,0.20)]">
+              <div className="baby-bounce text-[clamp(2.8rem,10vh,5.5rem)]">
                 👶
               </div>
             </div>

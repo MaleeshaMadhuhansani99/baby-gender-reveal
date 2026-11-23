@@ -121,10 +121,11 @@ export default function WishForm({
 
   if (saved) {
     return (
-      <main className="relative flex min-h-[100svh] items-center justify-center overflow-hidden bg-[#FFF8F5] px-5 py-8 text-center">
+      <main className="screen-page relative flex items-center justify-center overflow-x-hidden bg-[#FFF8F5] text-center">
         <BackgroundDecorations />
         <BackButton onClick={onBack} />
-        <section className="relative z-10 my-auto w-full max-w-md rounded-3xl border border-pink-100 bg-white/90 p-7 shadow-xl shadow-pink-100 backdrop-blur-sm">
+        <section className="screen-stage relative z-10 flex w-full max-w-md flex-col justify-center">
+          <div className="screen-fit-content w-full rounded-3xl border border-pink-100 bg-white/90 p-5 shadow-xl shadow-pink-100 backdrop-blur-sm sm:p-7">
           <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-pink-100 text-pink-600">
             <Heart size={42} fill="currentColor" />
           </div>
@@ -151,18 +152,20 @@ export default function WishForm({
           >
             💌 {t('viewAllWishes')}
           </button>
+          </div>
         </section>
       </main>
     )
   }
 
   return (
-    <main className="relative flex h-[100svh] items-center justify-center overflow-x-hidden overflow-y-auto bg-[#FFF8F5] px-4 py-6 text-[#30252F]">
+    <main className="screen-page relative flex items-center justify-center overflow-x-hidden bg-[#FFF8F5] text-[#30252F]">
       <BackgroundDecorations />
       <BackButton onClick={onBack} />
+      <div className="screen-stage relative z-10 flex w-full max-w-md flex-col justify-center">
       <form
         onSubmit={handleSubmit}
-        className="relative z-10 my-auto w-full max-w-md rounded-3xl border border-pink-100 bg-white/90 p-5 shadow-xl shadow-pink-100/60 backdrop-blur-sm sm:p-6"
+        className="screen-fit-content w-full rounded-3xl border border-pink-100 bg-white/90 p-4 shadow-xl shadow-pink-100/60 backdrop-blur-sm sm:p-6"
       >
         <div className="mx-auto mb-3 flex h-14 w-14 items-center justify-center rounded-full bg-pink-100 text-pink-600">
           <Heart size={30} fill="currentColor" />
@@ -222,6 +225,7 @@ export default function WishForm({
           Your message will be saved for the family.
         </p>
       </form>
+      </div>
     </main>
   )
 }

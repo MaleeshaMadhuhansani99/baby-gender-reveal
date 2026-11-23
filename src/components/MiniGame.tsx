@@ -15,7 +15,7 @@ export default function MiniGame({ onComplete }: Props) {
   }
 
   return (
-    <main className="flex h-[100svh] items-center justify-center overflow-hidden bg-[#FFF8F5] px-5 py-4 text-center text-[#30252F]">
+    <main className="screen-page relative flex items-center justify-center overflow-x-hidden bg-[#FFF8F5] text-center text-[#30252F]">
       <section className="w-full max-w-md">
         <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-pink-100 text-pink-600">
           <Heart size={34} fill="currentColor" />

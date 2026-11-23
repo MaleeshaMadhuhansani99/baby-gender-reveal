@@ -27,7 +27,7 @@ export default function GenderGuess({ onContinue, onBack, initialGuess = null }:
   }
 
   return (
-    <main className="relative h-[100svh] w-full overflow-hidden bg-[#fff8f5] text-[#30252f]">
+    <main className="screen-page relative w-full overflow-x-hidden bg-[#fff8f5] text-[#30252f]">
       <BackButton onClick={onBack} />
       {/* Soft background glow */}
       <div className="pointer-events-none absolute -left-24 -top-24 h-[35vh] w-[35vh] rounded-full bg-[#ff6b8a]/15 blur-3xl animate-soft-glow" />
@@ -78,8 +78,8 @@ export default function GenderGuess({ onContinue, onBack, initialGuess = null }:
       <div className="pointer-events-none absolute bottom-[30%] left-[25%] h-1.5 w-1.5 rounded-full bg-[#ffb347]/50 animate-twinkle-delay-2" />
 
       {/* Main content */}
-      <section className="relative z-10 flex h-full w-full items-center justify-center px-4 py-5">
-        <div className="flex h-full w-full max-w-3xl flex-col items-center justify-center text-center">
+      <section className="screen-stage relative z-10 flex w-full items-center justify-center">
+        <div className="screen-fit-content flex w-full max-w-3xl flex-col items-center justify-center text-center">
 
           {/* Top label */}
           <div className="animate-page-fade-up mb-3 flex items-center gap-2 rounded-full border border-[#ff6b8a]/20 bg-white/70 px-4 py-2 shadow-sm backdrop-blur-sm">

@@ -23,7 +23,7 @@ export default function GuestName({ onContinue, onBack, initialName = '' }: Gues
   }
 
   return (
-    <main className="relative h-[100svh] w-full overflow-hidden bg-[#fff8f5] text-[#30252f]">
+    <main className="screen-page relative w-full overflow-x-hidden bg-[#fff8f5] text-[#30252f]">
       <BackButton onClick={onBack} />
       {/* Soft background glows */}
       <div className="pointer-events-none absolute -left-24 -top-24 h-[35vh] w-[35vh] rounded-full bg-[#ff6b8a]/15 blur-3xl animate-soft-glow" />
@@ -69,8 +69,8 @@ export default function GuestName({ onContinue, onBack, initialName = '' }: Gues
       </div>
 
       {/* Main content */}
-      <section className="relative z-10 flex h-full w-full items-center justify-center px-5 py-5">
-        <div className="flex h-full w-full max-w-xl flex-col items-center justify-center text-center">
+      <section className="screen-stage relative z-10 flex w-full items-center justify-center">
+        <div className="screen-fit-content flex w-full max-w-xl flex-col items-center justify-center text-center">
           {/* Small label */}
           <div className="animate-page-fade-up mb-4 flex items-center gap-2 rounded-full border border-[#ff6b8a]/20 bg-white/70 px-4 py-2 shadow-sm backdrop-blur-sm">
             <Baby

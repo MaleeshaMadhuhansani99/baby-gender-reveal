@@ -21,7 +21,7 @@ export default function Reveal({onContinue, onBack}: Props) {
   }, [])
 
   return (
-    <main className="relative flex h-[100dvh] min-h-[100svh] items-center justify-center overflow-x-hidden overflow-y-hidden overscroll-contain bg-[#fff8f5] px-5 py-6 text-center text-[#30252f]">
+    <main className="screen-page relative flex items-center justify-center overflow-x-hidden bg-[#fff8f5] text-center text-[#30252f]">
       <BackButton onClick={onBack} />
       <div className="pointer-events-none absolute -left-24 -top-24 h-[35vh] w-[35vh] rounded-full bg-[#ff6b8a]/20 blur-3xl" />
       <div className="pointer-events-none absolute -right-24 top-[8%] h-[40vh] w-[40vh] rounded-full bg-[#7048e8]/15 blur-3xl" />
@@ -69,7 +69,8 @@ export default function Reveal({onContinue, onBack}: Props) {
         <Sparkles size={17} />
       </div>
 
-      <section className="relative z-10 my-auto w-full max-w-md">
+      <section className="screen-stage relative z-10 flex w-full max-w-md flex-col items-center justify-center">
+        <div className="screen-fit-content w-full">
         <Stars
           className="mx-auto mb-3 animate-twinkle text-[#e83e73]"
           size={36}
@@ -134,6 +135,7 @@ export default function Reveal({onContinue, onBack}: Props) {
         <p className="mt-4 text-xs text-[#81727D]">
           With love, Asinthaka & Dilki ❤️
         </p>
+        </div>
       </section>
     </main>
   )

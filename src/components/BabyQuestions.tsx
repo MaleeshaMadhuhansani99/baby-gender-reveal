@@ -110,7 +110,7 @@ export default function BabyQuestions({
   }
 
   return (
-    <main className="relative flex min-h-[100svh] items-center justify-center overflow-hidden bg-[#FFF8F5] px-4 py-6 text-[#30252F]">
+    <main className="screen-page relative flex items-center justify-center overflow-x-hidden bg-[#FFF8F5] text-[#30252F]">
 
       <BackButton onClick={handleBack} />
 
@@ -118,13 +118,14 @@ export default function BabyQuestions({
       <div className="pointer-events-none absolute -left-16 top-10 h-40 w-40 rounded-full bg-pink-200/50 blur-3xl" />
       <div className="pointer-events-none absolute -right-16 bottom-10 h-40 w-40 rounded-full bg-purple-200/50 blur-3xl" />
 
-      <section className="relative w-full max-w-md">
+      <section className="screen-stage relative flex w-full max-w-md flex-col justify-center">
+        <div className="screen-fit-content">
 
         {/* Header */}
         <div className="text-center">
           <div
             key={`emoji-${animationKey}`}
-            className="wizard-emoji mx-auto mb-3 flex h-16 w-16 items-center justify-center rounded-full bg-pink-100 text-pink-600"
+            className="wizard-emoji mx-auto mb-2 flex h-14 w-14 items-center justify-center rounded-full bg-pink-100 text-pink-600"
           >
             <span className="text-3xl">{currentQuestion.emoji}</span>
           </div>
@@ -143,7 +144,7 @@ export default function BabyQuestions({
         </div>
 
         {/* Progress */}
-        <div className="mt-7 flex items-center justify-center gap-2">
+        <div className="mt-4 flex items-center justify-center gap-2">
           {[0, 1, 2].map((number) => (
             <div
               key={number}
@@ -163,12 +164,12 @@ export default function BabyQuestions({
         {/* Question Card */}
         <div
           key={animationKey}
-          className={`wizard-card mt-5 min-h-[270px] rounded-3xl border border-pink-100 bg-white/90 p-5 shadow-lg shadow-pink-100/60 ${
+          className={`wizard-card mt-3 min-h-[220px] rounded-3xl border border-pink-100 bg-white/90 p-4 shadow-lg shadow-pink-100/60 ${
             direction === 'next' ? 'slide-from-right' : 'slide-from-left'
           }`}
         >
           {/* Question heading */}
-          <div className="wizard-content mb-6 text-center">
+          <div className="wizard-content mb-4 text-center">
             <h2 className="text-xl font-black leading-snug text-[#720C7D]">
               {t((['looksLike', 'lovesMost', 'nickname'] as const)[step])}
             </h2>
@@ -259,7 +260,7 @@ export default function BabyQuestions({
         </div>
 
         {/* Navigation buttons */}
-        <div className="mt-5 flex gap-3">
+        <div className="mt-3 flex gap-3">
           {step > 0 && (
             <button
               type="button"
@@ -292,9 +293,10 @@ export default function BabyQuestions({
           </button>
         </div>
 
-        <p className="mt-4 text-center text-xs text-[#81727D]">
+        <p className="mt-2 text-center text-xs text-[#81727D]">
           Made with love for our little miracle 💖
         </p>
+        </div>
       </section>
 
       {/* Wizard animations */}
