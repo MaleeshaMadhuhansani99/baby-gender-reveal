@@ -90,7 +90,7 @@ export default function Welcome({onContinue, onViewWishes}: WelcomeProps) {
           {/* Top label */}
           <div className="welcome-fade flex shrink-0 items-center gap-2 rounded-full bg-white px-4 py-2 text-[clamp(0.55rem,1.5vw,0.75rem)] font-bold uppercase tracking-[0.12em] text-[#7048e8] shadow-sm ring-1 ring-[#eee5f5]">
             <Sparkles
-              className="shrink-0 text-[#ff9f1c]"
+              className="sparkle sparkle-three"
               size="clamp(11px, 1.5vw, 14px)"
             />
 
