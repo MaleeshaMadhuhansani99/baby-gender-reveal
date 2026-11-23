@@ -88,7 +88,7 @@ export default function Welcome({onContinue, onViewWishes}: WelcomeProps) {
       <section className="relative z-10 flex h-full w-full items-center justify-center px-4">
         <div className="flex h-full w-full max-w-2xl flex-col items-center justify-center text-center">
           {/* Top label */}
-          <div className="welcome-fade flex shrink-0 items-center gap-2 rounded-full px-4 py-2 text-[clamp(0.55rem,1.5vw,0.75rem)] font-bold uppercase tracking-[0.12em] text-[#7048e8] shadow-sm ring-1 ring-[#eee5f5]">
+          <div className="welcome-fade flex shrink-0 items-center gap-2 rounded-full bg-white px-4 py-2 text-[clamp(0.55rem,1.5vw,0.75rem)] font-bold uppercase tracking-[0.12em] text-[#7048e8] shadow-sm ring-1 ring-[#eee5f5]">
             <Sparkles
               className="shrink-0 text-[#ff9f1c]"
               size="clamp(11px, 1.5vw, 14px)"
@@ -161,7 +161,7 @@ export default function Welcome({onContinue, onViewWishes}: WelcomeProps) {
             </div>
 
             {/* Star */}
-            <div className="decoration-float decoration-delay absolute -bottom-1 -left-2 flex h-[clamp(1.8rem,5vh,2.5rem)] w-[clamp(1.8rem,5vh,2.5rem)] items-center justify-center text-[clamp(0.8rem,2vh,1.1rem)]">
+            <div className="decoration-float decoration-delay absolute -bottom-1 -left-2 flex h-[clamp(1.8rem,5vh,2.5rem)] w-[clamp(1.8rem,5vh,2.5rem)] items-center justify-center rounded-full bg-white text-[clamp(0.8rem,2vh,1.1rem)] shadow-md">
               ⭐
             </div>
           </div>
